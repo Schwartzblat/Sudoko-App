@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sudokuSolver">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/suduko_solver"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/sudukoTable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id0"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id1"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id2"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id3"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id4"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id5"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id6"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id7"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id8"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id9"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id10"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id11"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id12"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id13"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id14"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id15"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id16"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id17"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id18"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id19"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id20"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id21"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id22"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id23"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id24"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id25"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id26"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id27"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id28"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id29"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id30"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id31"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id32"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id33"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id34"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id35"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id36"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id37"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id38"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id39"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id41"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id42"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id43"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id44"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id45"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id46"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id47"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id48"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id49"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id50"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id51"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id52"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id53"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id54"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id55"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id56"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id57"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id58"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id59"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id60"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id61"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id62"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id63"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id64"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id65"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id66"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id67"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id68"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id69"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id70"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id71"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id72"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id73"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id74"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id75"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id76"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id77"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id78"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id79"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id80"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id81"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <EditText
+        android:id="@+id/sudokuNums"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="50dp"
+        android:autoText="false"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/enter_sudoku"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="10dp"
+        android:onClick="upload"
+        android:text="@string/set_table"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sudukoTable" />
+
+    <Button
+        android:id="@+id/solve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:onClick="solveSudoku"
+        android:text="@string/solve"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@+id/upload"
+        app:layout_constraintTop_toBottomOf="@+id/sudukoTable" />
+
+    <View
+        android:id="@+id/col1"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="175dp"
+        android:background="@android:color/widget_edittext_dark"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/col2"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="215dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="175dp"
+        android:background="@android:color/widget_edittext_dark"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/row1"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="240dp"
+        android:background="@android:color/widget_edittext_dark"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="215dp"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="400dp"
+        android:background="@android:color/widget_edittext_dark"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="215dp"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

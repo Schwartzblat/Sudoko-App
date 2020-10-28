@@ -1,0 +1,1776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sudokuOff">
+
+  <TableLayout
+      android:id="@+id/sudukoTable"
+      android:layout_width="313dp"
+      android:layout_height="473dp"
+      android:layout_marginStart="40dp"
+      android:layout_marginTop="20dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/id0"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id1"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id2"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id3"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id4"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id5"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id6"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id7"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id8"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/id9"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id10"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id11"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id12"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id13"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id14"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id15"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id16"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id17"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/id18"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id19"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id20"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id21"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id22"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id23"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id24"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id25"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id26"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/id27"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id28"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id29"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id30"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id31"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id32"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id33"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id34"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id35"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/id36"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id37"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id38"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id39"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id41"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id42"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id43"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id44"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id45"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/id46"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id47"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id48"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id49"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id50"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id51"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id52"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id53"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id54"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/id55"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id56"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id57"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id58"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id59"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id60"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id61"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id62"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id63"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/id64"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id65"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id66"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id67"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id68"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id69"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id70"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id71"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id72"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/id73"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id74"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id75"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id76"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id77"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id78"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id79"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id80"
+          android:layout_width="35dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/id81"
+          android:layout_width="38dp"
+          android:layout_height="wrap_content"
+          android:text="@string/_0"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:textStyle="bold" />
+    </TableRow>
+  </TableLayout>
+
+  <View
+      android:id="@+id/col"
+      android:layout_width="3dp"
+      android:layout_height="match_parent"
+      android:layout_marginStart="138dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="230dp"
+      android:background="@android:color/widget_edittext_dark"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/sudukoTable"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:visibility="visible" />
+
+  <View
+      android:id="@+id/row"
+      android:layout_width="match_parent"
+      android:layout_height="3dp"
+      android:layout_marginStart="25dp"
+      android:layout_marginTop="180dp"
+      android:layout_marginEnd="50dp"
+      android:background="@android:color/widget_edittext_dark"
+      android:visibility="visible"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:visibility="visible" />
+
+  <View
+      android:id="@+id/col3"
+      android:layout_width="3dp"
+      android:layout_height="match_parent"
+      android:layout_marginStart="245dp"
+      android:layout_marginTop="20dp"
+      android:layout_marginBottom="230dp"
+      android:background="@android:color/widget_edittext_dark"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:visibility="visible" />
+
+  <View
+      android:id="@+id/row3"
+      android:layout_width="match_parent"
+      android:layout_height="3dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="345dp"
+      android:layout_marginEnd="50dp"
+      android:background="@android:color/widget_edittext_dark"
+      android:visibility="visible"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:visibility="visible" />
+
+  <TableLayout
+      android:layout_width="320dp"
+      android:layout_height="484dp"
+      android:layout_marginStart="40dp"
+      android:layout_marginTop="18dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+      <EditText
+          android:id="@+id/place1"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+          android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place2"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+          android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place3"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place4"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place5"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place6"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place7"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place8"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place9"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <EditText
+          android:id="@+id/place10"
+          android:layout_width="35dp"
+          android:layout_height="50dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place11"
+          android:layout_width="35dp"
+          android:layout_height="50dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place12"
+          android:layout_width="35dp"
+          android:layout_height="50dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place13"
+          android:layout_width="35dp"
+          android:layout_height="50dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place14"
+          android:layout_width="35dp"
+          android:layout_height="50dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place15"
+          android:layout_width="35dp"
+          android:layout_height="50dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place16"
+          android:layout_width="35dp"
+          android:layout_height="50dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place17"
+          android:layout_width="35dp"
+          android:layout_height="50dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place18"
+          android:layout_width="35dp"
+          android:layout_height="50dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <EditText
+          android:id="@+id/place19"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place20"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place21"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place22"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place23"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place24"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place25"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place26"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place27"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <EditText
+          android:id="@+id/place28"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place29"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place30"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place31"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place32"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place33"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place34"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place35"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place36"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <EditText
+          android:id="@+id/place37"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place38"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place39"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place40"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place41"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place42"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place43"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place44"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place45"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <EditText
+          android:id="@+id/place46"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place47"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place48"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place49"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place50"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place51"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place52"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place53"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place54"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <EditText
+          android:id="@+id/place55"
+          android:layout_width="30dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place56"
+          android:layout_width="30dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place57"
+          android:layout_width="30dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place58"
+          android:layout_width="30dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place59"
+          android:layout_width="30dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place60"
+          android:layout_width="30dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place61"
+          android:layout_width="30dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place62"
+          android:layout_width="30dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place63"
+          android:layout_width="30dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <EditText
+          android:id="@+id/place64"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place65"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place66"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place67"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place68"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place69"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place70"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place71"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place72"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <EditText
+          android:id="@+id/place73"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place74"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place75"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place76"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place77"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place78"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place79"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place80"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+
+      <EditText
+          android:id="@+id/place81"
+          android:layout_width="35dp"
+          android:layout_height="55dp"
+          android:ems="10"
+android:maxLength="1"
+          android:inputType="number"
+          android:textColor="@color/common_google_signin_btn_text_dark_focused"
+          android:textSize="30sp" />
+    </TableRow>
+  </TableLayout>
+
+  <TextView
+      android:id="@+id/textView9"
+      style="@android:style/Widget.DeviceDefault.Light.TextView.SpinnerItem"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="4dp"
+      android:layout_marginBottom="164dp"
+      android:text="Choose difficulty:"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <EditText
+      android:id="@+id/diff"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="5dp"
+      android:layout_marginBottom="155dp"
+      android:ems="10"
+      android:inputType="textPersonName"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/textView9" />
+
+  <Button
+      android:id="@+id/check"
+      android:layout_width="138dp"
+      android:layout_height="68dp"
+      android:layout_marginStart="124dp"
+      android:layout_marginBottom="72dp"
+      android:onClick="check"
+      android:text="Check Move"
+      android:textAllCaps="false"
+
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <Button
+      android:layout_width="124dp"
+      android:layout_height="62dp"
+      android:layout_marginStart="4dp"
+      android:layout_marginBottom="4dp"
+      android:onClick="newBoard"
+      android:text="Generate Board"
+      android:textAllCaps="false"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <Button
+      android:id="@+id/button3"
+      android:layout_width="130dp"
+      android:layout_height="69dp"
+      android:layout_marginStart="264dp"
+      android:layout_marginBottom="4dp"
+      android:onClick="download"
+      android:text="Download"
+      android:textAllCaps="false"
+      android:textSize="18sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

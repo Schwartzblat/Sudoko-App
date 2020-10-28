@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "586671191057",
+    "firebase_url": "https://mathapp-alon.firebaseio.com",
+    "project_id": "mathapp-alon",
+    "storage_bucket": "mathapp-alon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586671191057:android:6c1e748fb5062b71d12db0",
+        "android_client_info": {
+          "package_name": "com.example.MathApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586671191057-kft2b28b4ljkm6fn74a0nvjm7g5m6r2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQXJ-H4y-QYs9HfgVQnK0VKyU1VGqAuSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586671191057-kft2b28b4ljkm6fn74a0nvjm7g5m6r2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

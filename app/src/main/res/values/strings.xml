@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Math App</string>
+    <string name="button">Button</string>
+    <string name="sudukosolver">sudukoSolver</string>
+    <string name="suduku">Suduku</string>
+    <string name="suduko_solver">Please enter a sudoku numbers and when there is a space enter "0"</string>
+    <string name="_0">0</string>
+    <string name="enter_sudoku">enter sudoku</string>
+    <string name="set_table">Set Table</string>
+    <string name="solve">Solve</string>
+    <string name="solve_slow">Solve Slow</string>
+    <string name="triangle">Triangle</string>
+    <string name="triangleimage">triangleImage</string>
+    <string name="side_a">Side a =</string>
+    <string name="side_b">Side b =</string>
+    <string name="side_c">Side c =</string>
+    <string name="angle_b">Angle B =</string>
+    <string name="angle_a">Angle A =</string>
+    <string name="angle_c">Angle C =</string>
+    <string name="answerSideA"></string>
+    <string name="answerSideB"></string>
+    <string name="answerSideC"></string>
+    <string name="answerAngleA"></string>
+    <string name="answerAngleB"></string>
+    <string name="answerAngleC"></string>
+    <string name="area">Area =</string>
+    <string name="areaAns"></string>
+    <string name="clear_all">Clear All</string>
+    <string name="polinom_solver">Polinom Solver</string>
+    <string name="tic_tac_toe_vs_pc">Tic Tac Toe vs PC</string>
+    <string name="board">board</string>
+    <string name="todo">TODO</string>
+    <string name="play_again">Play Again</string>
+    <string name="game_over">Game Over</string>
+    <string name="status" />
+    <string name="title_activity_login">Login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string-array name="planets_array">
+        <item>Easy</item>
+        <item>Normal</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
+</resources>
