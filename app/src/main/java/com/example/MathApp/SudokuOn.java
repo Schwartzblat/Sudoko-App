@@ -56,6 +56,7 @@ public class SudokuOn extends AppCompatActivity {
         username = arr[0];
         code = arr[1];
         firebase();
+        //check
     }
 
     public void firebase(){
