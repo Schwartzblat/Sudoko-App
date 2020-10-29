@@ -87,4 +87,10 @@ public class logIn extends AppCompatActivity {
     public void onBackPressed() {
         moveTaskToBack(true);
     }
+
+    public void launchSignUp(View v){
+        Intent i = new Intent(this, signUp.class);
+        startActivity(i);
+        finish();
+    }
 }

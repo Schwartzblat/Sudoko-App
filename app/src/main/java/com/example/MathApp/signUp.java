@@ -160,6 +160,7 @@ public class signUp extends AppCompatActivity {
     public void launchLogIn(View V){
         Intent i = new Intent(this, logIn.class);
         startActivity(i);
+        finish();
     }
 
     @Override
