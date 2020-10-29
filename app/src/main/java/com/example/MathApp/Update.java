@@ -138,7 +138,6 @@ public class Update extends AppCompatActivity {
                                 }
 
                             } else {
-                                System.out.println("error");
                             }
                         }
                     }

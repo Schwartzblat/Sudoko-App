@@ -16,37 +16,29 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class signUp extends AppCompatActivity {
-    String status;
+    String status, username, check="";
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference myRef;
-    private String [] users = new String[100];
-
+    ValueEventListener listener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        updateUsers();
+
     }
 
     public void alert(String alert) {
         Toast.makeText(this, alert, Toast.LENGTH_LONG).show();
     }
 
-    public int getUsers(){
-        int counter =0;
-        for (String user : users) {
-            if (user != null) {
-                counter++;
-            }
-        }
-        return counter;
-    }
+
 
     public void check(View v) {
-        String status = "ok";
-        String username = (String) ((TextView) findViewById(R.id.username)).getText().toString();
+        check = "";
+        status = "ok";
+        username = (String) ((TextView) findViewById(R.id.username)).getText().toString();
         String email = (String) ((TextView) findViewById(R.id.email)).getText().toString();
         String phone = (String) ((TextView) findViewById(R.id.phone)).getText().toString();
         String password = (String) ((TextView) findViewById(R.id.password)).getText().toString();
@@ -66,14 +58,33 @@ public class signUp extends AppCompatActivity {
                 }
             }
         }
-        System.out.println(getUsers());
-       for(int i=0;i<getUsers();i++){
-           if(username.equals(users[i])){
-               status = "";
-               alert("this username is already taken");
-           }
-       }
-        //valid password
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child("user");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User xuser;
+                for (DataSnapshot user : dataSnapshot.getChildren()) {
+                    xuser = user.getValue(User.class);
+                    if (xuser != null) {
+                        if (username.equals(xuser.username)) {
+                            status = "";
+
+                            alert("this username is already taken");
+                        }
+
+
+                    } else {
+                    }
+                }
+                check = "ok";
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }});
+
+            //valid password
         if (!password.equals(passwordc)) {
             status = "";
             alert("please enter the same password");
@@ -102,7 +113,7 @@ public class signUp extends AppCompatActivity {
         }
 
 
-        if (status.equals("ok")) {
+        if (status.equals("ok")&&check.equals("ok")) {
             User user = new User(username, email, phone, password);
             newUser(user);
         }
@@ -118,44 +129,6 @@ public class signUp extends AppCompatActivity {
         finish();
     }
 
-    public void updateUsers(){
-        mAuth = FirebaseAuth.getInstance();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference();
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-
-            }
-        };
-        myRef.child("Users").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                System.out.println("calling show data");
-                showData(dataSnapshot);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-    private void showData(DataSnapshot dataSnapshot) {
-        int counter = 0;
-        for (DataSnapshot user : dataSnapshot.child("user").getChildren()) {
-            User xuser = user.getValue(User.class);
-            if(xuser != null) {
-                users[counter] = xuser.getUsername();
-            }
-            else{
-                System.out.println("error");
-            }
-            counter++;
-        }
-    }
 
     public void launchLogIn(View V){
         Intent i = new Intent(this, logIn.class);
