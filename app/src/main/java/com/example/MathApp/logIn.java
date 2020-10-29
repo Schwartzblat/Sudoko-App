@@ -1,12 +1,13 @@
 package com.example.MathApp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -44,7 +45,6 @@ public class logIn extends AppCompatActivity {
         myRef.child("Users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                System.out.println("calling show data");
                 showData(dataSnapshot);
             }
 
@@ -67,7 +67,6 @@ public class logIn extends AppCompatActivity {
 
             }
             else{
-                System.out.println("error");
             }
         }
         if(!status.equals("ok")) {

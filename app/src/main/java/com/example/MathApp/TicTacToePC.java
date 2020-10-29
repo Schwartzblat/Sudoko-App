@@ -1,11 +1,12 @@
 package com.example.MathApp;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class TicTacToePC extends AppCompatActivity{
     private int num_of_turns = 0;
@@ -29,7 +30,6 @@ public class TicTacToePC extends AppCompatActivity{
     }
 
     public void display(int id){
-        System.out.println("displayed");
         ImageView place = (ImageView) findViewById(id);
         if(place.getVisibility() == View.INVISIBLE) {
             place.setVisibility(View.VISIBLE);
@@ -57,7 +57,6 @@ public class TicTacToePC extends AppCompatActivity{
         int last = Integer.parseInt((String) v.getContentDescription());
         turns[getLast()] = last;
         display(placeO[last]);
-        System.out.println(turns[getLast()-1]);
         doMove();
         if(!status.equals("")){
             gameOver();

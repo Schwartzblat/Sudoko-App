@@ -1,18 +1,15 @@
 package com.example.MathApp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -50,7 +47,6 @@ public class sudokuRoom extends AppCompatActivity{
     }
 
     public void joinRoom(View v){
-        System.out.println("clicked");
         code = ((TextView)findViewById(R.id.code)).getText().toString();
         mAuth = FirebaseAuth.getInstance();
         myRef = FirebaseDatabase.getInstance().getReference();
@@ -96,7 +92,6 @@ public class sudokuRoom extends AppCompatActivity{
         String [] arr = {username,code};
         i.putExtra("nameAndCode", arr);
         i.putExtra("first", "user2");
-        System.out.println("starting online sudoku");
         startActivity(i);
         finish();
     }
