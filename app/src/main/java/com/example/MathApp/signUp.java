@@ -10,7 +10,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,11 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class signUp extends AppCompatActivity {
     String status, username, check="", password, phone, email;
-    private FirebaseDatabase mFirebaseDatabase;
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-    private DatabaseReference myRef;
-    ValueEventListener listener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +35,11 @@ public class signUp extends AppCompatActivity {
     public void check(View v) {
         check = "";
         status = "ok";
-        username = (String) ((TextView) findViewById(R.id.username)).getText().toString();
-        email = (String) ((TextView) findViewById(R.id.email)).getText().toString();
-        phone = (String) ((TextView) findViewById(R.id.phone)).getText().toString();
-        password = (String) ((TextView) findViewById(R.id.password)).getText().toString();
-        String passwordc = (String) ((TextView) findViewById(R.id.passwordConfirm)).getText().toString();
+        username = ((TextView) findViewById(R.id.username)).getText().toString();
+        email = ((TextView) findViewById(R.id.email)).getText().toString();
+        phone = ((TextView) findViewById(R.id.phone)).getText().toString();
+        password = ((TextView) findViewById(R.id.password)).getText().toString();
+        String passwordc = ((TextView) findViewById(R.id.passwordConfirm)).getText().toString();
         int counter = 0;
         //valid username
         if (username.length() < 4) {
