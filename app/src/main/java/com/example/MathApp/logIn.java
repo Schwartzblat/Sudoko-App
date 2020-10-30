@@ -16,13 +16,25 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class logIn extends AppCompatActivity {
-
+    DataSnapshot data = null;
     String username ="", password="";
     int status = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child("user");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                data = dataSnapshot;
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }});
     }
 
 
@@ -30,31 +42,20 @@ public class logIn extends AppCompatActivity {
         //get values
         username = ((TextView)findViewById(R.id.username)).getText().toString();
         password = ((TextView)findViewById(R.id.password)).getText().toString();
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child("user");
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User xuser;
-                for (DataSnapshot user : dataSnapshot.getChildren()) {
-                    xuser = user.getValue(User.class);
-                    if (xuser != null) {
-                        if (username.equals(xuser.username)&&password.equals(xuser.password)) {
-                            StatusIsOk();
-                            status = 1;
-                        }
-
-
-                    } else {
-                    }
+        User xuser;
+        for (DataSnapshot user : data.getChildren()) {
+            xuser = user.getValue(User.class);
+            if (xuser != null) {
+                if (username.equals(xuser.username)&&password.equals(xuser.password)) {
+                    StatusIsOk();
+                    status = 1;
                 }
-                Toast.makeText(getApplicationContext(), "invalid name or password", Toast.LENGTH_LONG).show();
-                ((TextView) findViewById(R.id.password)).setText("");
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }});
+        }
+        if(status==0) {
+            Toast.makeText(getApplicationContext(), "invalid name or password", Toast.LENGTH_LONG).show();
+            ((TextView) findViewById(R.id.password)).setText("");
+        }
     }
 
 
