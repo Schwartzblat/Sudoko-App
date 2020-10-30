@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,11 +20,8 @@ import java.util.Objects;
 import java.util.Random;
 
 public class sudokuRoom extends AppCompatActivity{
-    String username, status = "no",code;
+    String username,code;
     Context context;
-    private FirebaseDatabase mFirebaseDatabase;
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference myRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +45,12 @@ public class sudokuRoom extends AppCompatActivity{
 
     public void joinRoom(View v){
         code = ((TextView)findViewById(R.id.code)).getText().toString();
-        mAuth = FirebaseAuth.getInstance();
-        myRef = FirebaseDatabase.getInstance().getReference();
-        myRef.addValueEventListener(new ValueEventListener() {
+        myRef = FirebaseDatabase.getInstance().getReference("Rooms");
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(status.equals("no")) {
-                    showData(dataSnapshot);
-                }
+                showData(dataSnapshot);
+
             }
 
             @Override
@@ -75,7 +69,7 @@ public class sudokuRoom extends AppCompatActivity{
     }
 
     private void showData(DataSnapshot dataSnapshot) {
-        for (DataSnapshot id : dataSnapshot.child("Rooms").getChildren()) {
+        for (DataSnapshot id : dataSnapshot.getChildren()) {
             if(code!=null){
                 if(Objects.equals(id.getKey(), code)){
                     correct();
@@ -85,7 +79,6 @@ public class sudokuRoom extends AppCompatActivity{
     }
 
     public void correct(){
-        status = "yes";
         FirebaseDatabase.getInstance().getReference("Rooms").child(code).child("users").child("user2").child("username").setValue(username);
         FirebaseDatabase.getInstance().getReference("Rooms").child(code).child("users").child("user2").child("lives").setValue("3");
         Intent i = new Intent(this, SudokuOn.class);
