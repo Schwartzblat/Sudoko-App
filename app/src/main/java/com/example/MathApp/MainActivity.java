@@ -1,7 +1,10 @@
 package com.example.MathApp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
@@ -49,8 +52,31 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        moveTaskToBack(true);
+        createDialog("Are you sure you want to exit?", "yes", "no");
+        //moveTaskToBack(true);
     }
 
+    public void createDialog(String message, String positiveString, String negativeString){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage("Are you sure you want to exit?").
+                setCancelable(true)
+                .setPositiveButton(positiveString, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                }).setNegativeButton(negativeString, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
 
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+
+
+    }
 }
