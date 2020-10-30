@@ -41,21 +41,23 @@ public class logIn extends AppCompatActivity {
         //get values
         username = ((TextView)findViewById(R.id.username)).getText().toString();
         password = ((TextView)findViewById(R.id.password)).getText().toString();
-        User xuser;
-        for (DataSnapshot user : data.getChildren()) {
-            xuser = user.getValue(User.class);
-            if (xuser != null) {
-                if (username.equals(xuser.username)&&password.equals(xuser.password)) {
-                    phone = xuser.phone;
-                    email = xuser.email;
-                    StatusIsOk();
-                    status = 1;
+        if(data!=null) {
+            User xuser;
+            for (DataSnapshot user : data.getChildren()) {
+                xuser = user.getValue(User.class);
+                if (xuser != null) {
+                    if (username.equals(xuser.username) && password.equals(xuser.password)) {
+                        phone = xuser.phone;
+                        email = xuser.email;
+                        StatusIsOk();
+                        status = 1;
+                    }
                 }
             }
-        }
-        if(status==0) {
-            Toast.makeText(getApplicationContext(), "invalid name or password", Toast.LENGTH_LONG).show();
-            ((TextView) findViewById(R.id.password)).setText("");
+            if (status == 0) {
+                Toast.makeText(getApplicationContext(), "invalid name or password", Toast.LENGTH_LONG).show();
+                ((TextView) findViewById(R.id.password)).setText("");
+            }
         }
     }
 

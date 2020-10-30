@@ -61,12 +61,12 @@ public class waitingRoom extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }});
 
-            update();
+        update();
         Intent i = getIntent();
-        String [] arr = i.getStringArrayExtra("nameAndCode");
         SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
         username = data.getString("username", null);
         code = i.getStringExtra("code");
+        System.out.println(code);
         ((TextView)findViewById(R.id.code)).setText(("Room Code: "+code));
         context = getApplicationContext();
     }
@@ -100,8 +100,7 @@ public class waitingRoom extends AppCompatActivity {
                 status = "ok";
                 Intent i = new Intent(this, SudokuOn.class);
                 Sudoku sudoku = new Sudoku(diff, context);
-                String [] arr = {username,code};
-                i.putExtra("nameAndCode", arr);
+                i.putExtra("code", code);
                 i.putExtra("first", "user1");
                 FirebaseDatabase.getInstance().getReference("Rooms").child(code).child("board").setValue(sudoku.boardNums);
                 FirebaseDatabase.getInstance().getReference("Rooms").child(code).child("users").child("user1").child("lives").setValue("3");

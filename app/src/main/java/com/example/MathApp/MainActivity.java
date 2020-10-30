@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createDialog(String message, String positiveString, String negativeString){
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setMessage("Are you sure you want to exit?").
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialogCustom);
+        builder.setMessage(message).
                 setCancelable(true)
                 .setPositiveButton(positiveString, new DialogInterface.OnClickListener() {
                     @Override
@@ -76,7 +76,5 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
         dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
         dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
-
-
     }
 }

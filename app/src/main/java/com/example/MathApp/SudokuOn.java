@@ -1,11 +1,13 @@
 package com.example.MathApp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,10 +41,9 @@ public class SudokuOn extends AppCompatActivity {
         setContentView(R.layout.activity_sudoku_on);
         Intent i = getIntent();
         pos = i.getStringExtra("first");
-        String [] arr = i.getStringArrayExtra("nameAndCode");
         SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
         username = data.getString("username", null);
-        code = arr[1];
+        code = i.getStringExtra("code");
         firebase();
         //check
     }
@@ -50,8 +51,8 @@ public class SudokuOn extends AppCompatActivity {
     public void firebase(){
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference();
-        myRef.child("Rooms").child(code).addValueEventListener(new ValueEventListener() {
+        myRef = mFirebaseDatabase.getReference("Rooms").child(code);
+        myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (status < 2) {
@@ -167,21 +168,60 @@ public class SudokuOn extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference("Rooms").child(code).removeValue();
         //close screen
         Intent i;
+        String msg ="";
         if(bool){
-            Toast.makeText(this,"You are the winner! good job!", Toast.LENGTH_LONG).show();
-            i = new Intent(this, MainActivity.class);
+            msg = "You are the winner! good job!";
         }
         else{
-            Toast.makeText(this,"you lost, maybe next time...", Toast.LENGTH_LONG).show();
-            i = new Intent(this, MainActivity.class);
+            msg = "you lost, maybe next time...";
         }
-        i.putExtra("username", username);
-        startActivity(i);
-        finish();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+        builder.setMessage(msg).
+                setCancelable(true)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent i = new Intent(getApplicationContext(), sudokuRoom.class);
+                        startActivity(i);
+                        finish();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+
+
+
+
     }
 
 
+    public void onBackPressed(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+        builder.setMessage("Are you sure you want to exit?").
+                setCancelable(true)
+                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        FirebaseDatabase.getInstance().getReference("Rooms").child(code).child("winner").setValue(otherUser);
+                        Intent i = new Intent(getApplicationContext(), sudokuRoom.class);
+                        i.putExtra("quit", "quit");
+                        startActivity(i);
+                        finish();
+                    }
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
 
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+    }
 
 
 }
