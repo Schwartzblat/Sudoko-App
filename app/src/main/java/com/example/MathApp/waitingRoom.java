@@ -2,6 +2,7 @@ package com.example.MathApp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -63,8 +64,9 @@ public class waitingRoom extends AppCompatActivity {
             update();
         Intent i = getIntent();
         String [] arr = i.getStringArrayExtra("nameAndCode");
-        username = arr[0];
-        code = arr[1];
+        SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
+        username = data.getString("username", null);
+        code = i.getStringExtra("code");
         ((TextView)findViewById(R.id.code)).setText(("Room Code: "+code));
         context = getApplicationContext();
     }

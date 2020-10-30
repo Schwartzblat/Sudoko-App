@@ -1,6 +1,7 @@
 package com.example.MathApp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -28,9 +29,7 @@ public class logIn extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 data = dataSnapshot;
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -65,6 +64,10 @@ public class logIn extends AppCompatActivity {
         Intent i = new Intent(this, MainActivity.class);
         i.putExtra("username", username);
         i.putExtra("password", password);
+        SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE ).edit();
+        editor.putString("username", username);
+        editor.putString("password", password);
+        editor.apply();
         startActivity(i);
         finish();
 

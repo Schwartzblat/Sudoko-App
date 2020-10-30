@@ -89,8 +89,7 @@ public class sudokuRoom extends AppCompatActivity{
         FirebaseDatabase.getInstance().getReference("Rooms").child(code).child("users").child("user2").child("lives").setValue("3");
 
         Intent i = new Intent(this, SudokuOn.class);
-        String [] arr = {username,code};
-        i.putExtra("nameAndCode", arr);
+        i.putExtra("code", code);
         i.putExtra("first", "user2");
         startActivity(i);
         finish();

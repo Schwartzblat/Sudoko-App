@@ -1,24 +1,14 @@
 package com.example.MathApp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PixelFormat;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -27,9 +17,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
-import java.util.EventListener;
 import java.util.Objects;
 
 public class SudokuOn extends AppCompatActivity {
@@ -53,7 +40,8 @@ public class SudokuOn extends AppCompatActivity {
         Intent i = getIntent();
         pos = i.getStringExtra("first");
         String [] arr = i.getStringArrayExtra("nameAndCode");
-        username = arr[0];
+        SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
+        username = data.getString("username", null);
         code = arr[1];
         firebase();
         //check

@@ -1,6 +1,7 @@
 package com.example.MathApp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,9 +13,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent i = getIntent();
-        username = i.getStringExtra("username");
-        password = i.getStringExtra("password");
+        SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
+        username = data.getString("username", null);
+        password = data.getString("password", null);
     }
 
     public void launchSudokuSolver(View view){

@@ -1,14 +1,16 @@
 package com.example.MathApp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -16,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class signUp extends AppCompatActivity {
-    String status, username, check="";
+    String status, username, check="", password;
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -41,7 +43,7 @@ public class signUp extends AppCompatActivity {
         username = (String) ((TextView) findViewById(R.id.username)).getText().toString();
         String email = (String) ((TextView) findViewById(R.id.email)).getText().toString();
         String phone = (String) ((TextView) findViewById(R.id.phone)).getText().toString();
-        String password = (String) ((TextView) findViewById(R.id.password)).getText().toString();
+        password = (String) ((TextView) findViewById(R.id.password)).getText().toString();
         String passwordc = (String) ((TextView) findViewById(R.id.passwordConfirm)).getText().toString();
         int counter = 0;
         //valid username
@@ -124,7 +126,9 @@ public class signUp extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("Users").child("user");
         myRef.child(user.username).setValue(user);
         Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("username", user.username);
+        SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
+        username = data.getString("username", null);
+        password = data.getString("password", null);
         startActivity(i);
         finish();
     }
