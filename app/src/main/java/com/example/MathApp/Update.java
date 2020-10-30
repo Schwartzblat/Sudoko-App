@@ -32,8 +32,6 @@ public class Update extends AppCompatActivity {
     int status=1;
     User oldUser;
     byte [] image = null;
-    int check =0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,18 +114,16 @@ public class Update extends AppCompatActivity {
                 }
             }
             DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child("user");
-            myRef.addValueEventListener(new ValueEventListener() {
+            myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(check==0) {
-                        User xuser;
-                        for (DataSnapshot user : dataSnapshot.getChildren()) {
-                            xuser = user.getValue(User.class);
-                            if (xuser != null) {
-                                if (inUsername.equals(xuser.username)) {
-                                    status = 0;
-                                    alert("this username is already taken");
-                                }
+                    User xuser;
+                    for (DataSnapshot user : dataSnapshot.getChildren()) {
+                        xuser = user.getValue(User.class);
+                        if (xuser != null) {
+                            if (inUsername.equals(xuser.username)) {
+                                status = 0;
+                                alert("this username is already taken");
                             }
                         }
                     }

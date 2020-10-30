@@ -61,7 +61,7 @@ public class signUp extends AppCompatActivity {
             }
         }
         DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child("user");
-        myRef.addValueEventListener(new ValueEventListener() {
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User xuser;
