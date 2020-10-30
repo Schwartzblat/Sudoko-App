@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class signUp extends AppCompatActivity {
-    String status, username, check="", password;
+    String status, username, check="", password, phone, email;
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -41,8 +41,8 @@ public class signUp extends AppCompatActivity {
         check = "";
         status = "ok";
         username = (String) ((TextView) findViewById(R.id.username)).getText().toString();
-        String email = (String) ((TextView) findViewById(R.id.email)).getText().toString();
-        String phone = (String) ((TextView) findViewById(R.id.phone)).getText().toString();
+        email = (String) ((TextView) findViewById(R.id.email)).getText().toString();
+        phone = (String) ((TextView) findViewById(R.id.phone)).getText().toString();
         password = (String) ((TextView) findViewById(R.id.password)).getText().toString();
         String passwordc = (String) ((TextView) findViewById(R.id.passwordConfirm)).getText().toString();
         int counter = 0;
@@ -126,9 +126,12 @@ public class signUp extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("Users").child("user");
         myRef.child(user.username).setValue(user);
         Intent i = new Intent(this, MainActivity.class);
-        SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
-        username = data.getString("username", null);
-        password = data.getString("password", null);
+        SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE ).edit();
+        editor.putString("username", username);
+        editor.putString("password", password);
+        editor.putString("phone", phone);
+        editor.putString("email", email);
+        editor.apply();
         startActivity(i);
         finish();
     }
