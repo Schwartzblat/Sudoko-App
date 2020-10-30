@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class logIn extends AppCompatActivity {
     DataSnapshot data = null;
-    String username ="", password="";
+    String username ="", password="", email, phone;
     int status = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,8 @@ public class logIn extends AppCompatActivity {
             xuser = user.getValue(User.class);
             if (xuser != null) {
                 if (username.equals(xuser.username)&&password.equals(xuser.password)) {
+                    phone = xuser.phone;
+                    email = xuser.email;
                     StatusIsOk();
                     status = 1;
                 }
@@ -67,6 +69,8 @@ public class logIn extends AppCompatActivity {
         SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE ).edit();
         editor.putString("username", username);
         editor.putString("password", password);
+        editor.putString("phone", phone);
+        editor.putString("email", email);
         editor.apply();
         startActivity(i);
         finish();
