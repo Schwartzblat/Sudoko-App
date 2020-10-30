@@ -39,14 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void launchRoom(View view){
         Intent i = new Intent(this, sudokuRoom.class);
-        i.putExtra("username", username);
         startActivity(i);
     }
 
     public void launchUpdate(View view){
         Intent i = new Intent(this, Update.class);
-        i.putExtra("username", username);
-        i.putExtra("password", password);
         startActivity(i);
     }
 
