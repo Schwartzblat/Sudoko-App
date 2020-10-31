@@ -1,32 +1,23 @@
 package com.example.MathApp;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.Typeface;
-import android.graphics.fonts.Font;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 public class sudokuOff extends AppCompatActivity{
+    String diff = "easy";
     Context context;
     int reamin=0;
     int[][] board;
@@ -40,7 +31,31 @@ public class sudokuOff extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sudoku_off);
         context= getApplicationContext();
-        sudoku = new Sudoku("normal", context);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.planets_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                String [] difficultyArr = {"easy", "normal", "medium", "hard"};
+                diff = difficultyArr[pos];
+                Toast.makeText(getApplicationContext(), "Difficulty changed to "+diff, Toast.LENGTH_LONG).show();
+                sudoku = new Sudoku(diff, context);
+                board = sudoku.getBoard();
+                solved = Sudoku.solve(Sudoku.boardNumsToBoard(sudoku.boardNums));
+                setBoard();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }});
+
+        sudoku = new Sudoku(diff, context);
         board = sudoku.getBoard();
         solved = Sudoku.solve(Sudoku.boardNumsToBoard(sudoku.boardNums));
         setBoard();
@@ -92,18 +107,6 @@ public class sudokuOff extends AppCompatActivity{
         Toast.makeText(this, alert, Toast.LENGTH_LONG).show();
     }
 
-    public void newBoard(View v){
-        String diff = ((TextView)findViewById(R.id.diff)).getText().toString();
-        if(diff.equals("easy") || diff.equals("normal") || diff.equals("medium") || diff.equals("hard")) {
-            sudoku = new Sudoku(diff, context);
-            board = sudoku.getBoard();
-            solved = Sudoku.solve(Sudoku.boardNumsToBoard(sudoku.boardNums));
-            setBoard();
-        }
-        else{
-            alert("please choose between easy, normal, medium or hard");
-        }
-    }
 
     public void gameOver(){
 

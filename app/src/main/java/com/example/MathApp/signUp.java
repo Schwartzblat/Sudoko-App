@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class signUp extends AppCompatActivity {
-    String status, username, check="", password, phone, email;
+    String status, username, check, password, phone, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

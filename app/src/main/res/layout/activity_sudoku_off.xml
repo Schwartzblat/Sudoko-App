@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".sudokuOff">
 
+  <Spinner
+      android:id="@+id/spinner"
+      android:layout_width="254dp"
+      android:layout_height="49dp"
+      android:layout_marginBottom="8dp"
+      app:layout_constraintBottom_toTopOf="@+id/check"
+      app:layout_constraintStart_toEndOf="@+id/textView9" />
+
   <TableLayout
       android:id="@+id/sudukoTable"
       android:layout_width="313dp"
@@ -1725,17 +1733,6 @@ android:maxLength="1"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent" />
 
-  <EditText
-      android:id="@+id/diff"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="5dp"
-      android:layout_marginBottom="155dp"
-      android:ems="10"
-      android:inputType="textPersonName"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toEndOf="@+id/textView9" />
-
   <Button
       android:id="@+id/check"
       android:layout_width="138dp"
@@ -1750,21 +1747,9 @@ android:maxLength="1"
       app:layout_constraintStart_toStartOf="parent" />
 
   <Button
-      android:layout_width="124dp"
-      android:layout_height="62dp"
-      android:layout_marginStart="4dp"
-      android:layout_marginBottom="4dp"
-      android:onClick="newBoard"
-      android:text="Generate Board"
-      android:textAllCaps="false"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent" />
-
-  <Button
-      android:id="@+id/button3"
       android:layout_width="130dp"
       android:layout_height="69dp"
-      android:layout_marginStart="264dp"
+      android:layout_marginStart="280dp"
       android:layout_marginBottom="4dp"
       android:onClick="download"
       android:text="Download"
