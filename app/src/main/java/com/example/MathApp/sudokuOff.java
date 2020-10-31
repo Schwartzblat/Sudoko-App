@@ -1,8 +1,12 @@
 package com.example.MathApp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -109,12 +113,26 @@ public class sudokuOff extends AppCompatActivity{
 
 
     public void gameOver(){
-
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+        builder.setMessage("well done you won!").
+                setCancelable(true)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
     }
 
     public void download(View v){
         View a = new MyCanvas(context, board);
-        Bitmap bitmap = Bitmap.createBitmap(900/*width*/, 900/*height*/, Bitmap.Config.ARGB_8888);
+        Bitmap bitmap = Bitmap.createBitmap(900, 900, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         a.draw(canvas);
 
@@ -124,34 +142,31 @@ public class sudokuOff extends AppCompatActivity{
         catch (Exception ignored){}
         MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "title" , "des");
         alert("download to gallery");
-        /*ImageIO.write(canvas, "png", file);
-        file = new File("myimage.jpg");
-        ImageIO.write(bufferedImage, "jpg", file);*/
-
-
-
     }
 
-    /*public static void print_board(int [][] board){
-        for(int i=0;i<9;i++) {
-            if(i % 3 == 0 && i !=0) {
-                System.out.println("- - - - - - - - - - - - - ");
-            }
-            for(int j = 0;j<9;j++) {
-                if(j % 3 == 0 && j !=0){
-                    System.out.print(" | ");
-                }
+    public void onBackPressed(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+        builder.setMessage("Are you sure you want to exit?").
+                setCancelable(true)
+                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int id){
+                        dialog.cancel();
+                    }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+    }
 
-                if(j == 8) {
-                    System.out.println(board[i][j]);
-                }
-                else{
-                    System.out.print(board[i][j] + " ");
-                }
-            }
-        }
-
-    }*/
 
 
 }

@@ -1,8 +1,11 @@
 package com.example.MathApp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -112,7 +115,28 @@ public class waitingRoom extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        FirebaseDatabase.getInstance().getReference("Rooms").child(code).removeValue();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+        builder.setMessage("Are you sure to you want to exit?").
+                setCancelable(true)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        FirebaseDatabase.getInstance().getReference("Rooms").child(code).removeValue();
+                        Intent i = new Intent(getApplicationContext(), sudokuRoom.class);
+                        startActivity(i);
+                        finish();
+                    }
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+
     }
 
     public void onStop() {
