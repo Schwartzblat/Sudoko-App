@@ -4,20 +4,26 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Objects;
 
@@ -45,7 +51,40 @@ public class SudokuOn extends AppCompatActivity {
         username = data.getString("username", null);
         code = i.getStringExtra("code");
         firebase();
-        //check
+        // profile image:
+        try{
+            StorageReference islandRef = FirebaseStorage.getInstance().getReference(username);
+            final long ONE_MEGABYTE = 1024 * 1024;
+
+            islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                @Override
+                public void onSuccess(byte[] bytes) {
+                    ((ImageView)findViewById(R.id.yourIMG)).setImageBitmap(BitmapFactory.decodeByteArray(bytes , 0, bytes.length));
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                }
+            });
+        }
+        catch (Exception ignored){
+        }
+
+        try{
+            StorageReference islandRef = FirebaseStorage.getInstance().getReference(otherUser);
+            islandRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                @Override
+                public void onSuccess(byte[] bytes) {
+                    ((ImageView)findViewById(R.id.hisIMG)).setImageBitmap(BitmapFactory.decodeByteArray(bytes , 0, bytes.length));
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                }
+            });
+        }
+        catch (Exception e){
+        }
     }
 
     public void firebase(){
@@ -64,13 +103,27 @@ public class SudokuOn extends AppCompatActivity {
                             } else if (pos.equals("user2")) {
                                 otherUser = dataSnapshot.child("users").child("user1").child("username").getValue().toString();
                             }
+                            try{
+                                StorageReference islandRef = FirebaseStorage.getInstance().getReference(otherUser);
+                                islandRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                                    @Override
+                                    public void onSuccess(byte[] bytes) {
+                                        ((ImageView)findViewById(R.id.hisIMG)).setImageBitmap(BitmapFactory.decodeByteArray(bytes , 0, bytes.length));
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception exception) {
+                                    }
+                                });
+                            }
+                            catch (Exception ignored){}
                             board = sudoku.getBoard();
                             solved = Sudoku.solve(Sudoku.boardNumsToBoard(sudoku.boardNums));
                             setBoard();
                             status++;
                             update();
-                        } catch (Exception ignored) {
-                        }
+                        } catch (Exception ignored){}
+                        ((TextView)findViewById(R.id.hisName)).setText(otherUser);
                     }
                     try {
                         if (pos.equals("user1")) {
