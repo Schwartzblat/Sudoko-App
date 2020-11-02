@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +34,7 @@ public class Update extends AppCompatActivity {
     int status=1;
     User oldUser;
     byte [] image = null;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +91,8 @@ public class Update extends AppCompatActivity {
     }
 
     public void update(View v){
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser authUser= mAuth.getCurrentUser();
         // get input:
         inUsername = ((TextView)findViewById(R.id.username)).getText().toString();
         String inEmail = ((TextView)findViewById(R.id.email)).getText().toString();
@@ -144,6 +149,12 @@ public class Update extends AppCompatActivity {
         if(!inPass.equals("")){
             if(oldPass.equals(oldPassword)) {
                 if (inPass.equals(inPassc) && inPass.length() > 7) {
+                    if(authUser!=null) {
+                        authUser.updatePassword(inPass);
+                    }
+                    else{
+                        System.out.println("noder");
+                    }
                     oldUser.setPassword(inPass);
                 } else {
                     alert("please enter valid password");
@@ -168,6 +179,9 @@ public class Update extends AppCompatActivity {
         // email check:
         if(!inEmail.equals("")){
             if(inEmail.contains("@")){
+                if(authUser!=null) {
+                    authUser.updateEmail(inEmail);
+                }
                 oldUser.setEmail(inEmail);
             }
             else{
