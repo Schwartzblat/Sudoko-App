@@ -83,8 +83,7 @@ public class SudokuOn extends AppCompatActivity {
                 }
             });
         }
-        catch (Exception e){
-        }
+        catch (Exception e){}
     }
 
     public void firebase(){
