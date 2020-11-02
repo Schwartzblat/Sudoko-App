@@ -10,6 +10,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,13 +21,26 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class signUp extends AppCompatActivity {
-    String status, username, check, password, phone, email;
+    String status, username, password, phone, email;
+    private FirebaseAuth mAuth;
+    DataSnapshot data;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
+        mAuth = FirebaseAuth.getInstance();
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child("user");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                data = dataSnapshot;
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {}});
     }
 
     public void alert(String alert) {
@@ -33,13 +50,12 @@ public class signUp extends AppCompatActivity {
 
 
     public void check(View v) {
-        check = "";
         status = "ok";
-        username = ((TextView) findViewById(R.id.username)).getText().toString();
-        email = ((TextView) findViewById(R.id.email)).getText().toString();
-        phone = ((TextView) findViewById(R.id.phone)).getText().toString();
-        password = ((TextView) findViewById(R.id.password)).getText().toString();
-        String passwordc = ((TextView) findViewById(R.id.passwordConfirm)).getText().toString();
+        username = ((TextView) findViewById(R.id.username)).getText().toString().trim();
+        email = ((TextView) findViewById(R.id.email)).getText().toString().trim();
+        phone = ((TextView) findViewById(R.id.phone)).getText().toString().trim();
+        password = ((TextView) findViewById(R.id.password)).getText().toString().trim();
+        String passwordc = ((TextView) findViewById(R.id.passwordConfirm)).getText().toString().trim();
         int counter = 0;
         //valid username
         if (username.length() < 4) {
@@ -55,32 +71,18 @@ public class signUp extends AppCompatActivity {
                 }
             }
         }
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child("user");
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User xuser;
-                for (DataSnapshot user : dataSnapshot.getChildren()) {
-                    xuser = user.getValue(User.class);
-                    if (xuser != null) {
-                        if (username.equals(xuser.username)) {
-                            status = "";
+        User xuser;
+        for (DataSnapshot user : data.getChildren()) {
+            xuser = user.getValue(User.class);
+            if (xuser != null) {
+                if (username.equals(xuser.username)) {
+                    status = "";
 
-                            alert("this username is already taken");
-                        }
-
-
-                    } else {
-                    }
+                    alert("this username is already taken");
                 }
-                check = "ok";
+            } else {
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }});
-
+        }
             //valid password
         if (!password.equals(passwordc)) {
             status = "";
@@ -110,25 +112,35 @@ public class signUp extends AppCompatActivity {
         }
 
 
-        if (status.equals("ok")&&check.equals("ok")) {
+        if (status.equals("ok")) {
             User user = new User(username, email, phone, password);
             newUser(user);
         }
     }
 
-    public void newUser(User user) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Users").child("user");
-        myRef.child(user.username).setValue(user);
-        Intent i = new Intent(this, MainActivity.class);
-        SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE ).edit();
-        editor.putString("username", username);
-        editor.putString("password", password);
-        editor.putString("phone", phone);
-        editor.putString("email", email);
-        editor.apply();
-        startActivity(i);
-        finish();
+    public void newUser(final User user) {
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Users").child("user");
+                            myRef.child(user.username).setValue(user);
+                            SharedPreferences.Editor editor = getSharedPreferences("data", MODE_PRIVATE).edit();
+                            editor.putString("username", username);
+                            editor.putString("password", password);
+                            editor.putString("phone", phone);
+                            editor.putString("email", email);
+                            editor.apply();
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(i);
+                        } else {
+                            System.out.println(task.getException());
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(getApplicationContext(), "Please enter real email", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
 
