@@ -33,7 +33,8 @@
         <activity android:name=".TicTacToePC" />
         <activity android:name=".Triangle" />
         <activity android:name=".sudokuSolver" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppThemeMain" />
     </application>
 
 </manifest>

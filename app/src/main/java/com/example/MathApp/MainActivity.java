@@ -19,12 +19,14 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
         username = data.getString("username", null);
         password = data.getString("password", null);
+        //((NavigationView)findViewById(R.id.navi)).
     }
 
     public void launchSudokuSolver(View view){
         Intent i = new Intent(this, sudokuSolver.class);
         startActivity(i);
     }
+
     public void launchTriangle(View view){
         Intent i = new Intent(this, Triangle.class);
         startActivity(i);

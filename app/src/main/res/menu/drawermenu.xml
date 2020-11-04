@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/solver" android:title="Sudoku Solver"></item>
+    <item android:id="@+id/offline" android:title="Sudoku Offline"></item>
+    <item android:id="@+id/online" android:title="Sudoku Online"></item>
+    <item android:id="@+id/TicTacToe" android:title="Tic Tac Toe vs PC"></item>
+    <item android:id="@+id/update" android:title="Update Info"></item>
+
+</menu>
