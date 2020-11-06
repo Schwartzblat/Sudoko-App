@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/solver" android:title="Sudoku Solver"
-        android:onClick="launchSudokuSolver">
-    </item>
+    <item
+        android:id="@+id/solver"
+        android:onClick="launchSudokuSolver"
+        android:title="Sudoku Solver" />
+
     <item android:id="@+id/offline" android:title="Sudoku Offline"
+        android:icon="@drawable/sudokuicon"
         android:onClick="launchSudoku">
     </item>
     <item
