@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:id="@+id/solver"
+
+        android:icon="@drawable/solved"
         android:onClick="launchSudokuSolver"
         android:title="Sudoku Solver" />
 
@@ -9,17 +12,23 @@
         android:icon="@drawable/sudokuicon"
         android:onClick="launchSudoku">
     </item>
+
+
     <item
         android:id="@+id/online"
         android:title="Sudoku Online"
+        android:icon="@drawable/sword"
         android:onClick="launchRoom" />
     <item
         android:id="@+id/TicTacToe"
         android:title="Tic Tac Toe vs PC"
-        android:onClick="launchTicTacToePC" />
+        android:onClick="launchTicTacToePC"
+        android:icon="@drawable/tic_tac_toe"/>
     <item
         android:id="@+id/update"
         android:title="Update Info"
-        android:onClick="launchUpdate" />
+        android:onClick="launchUpdate"
+        android:icon="@drawable/profile_user"
+        />
 
 </menu>

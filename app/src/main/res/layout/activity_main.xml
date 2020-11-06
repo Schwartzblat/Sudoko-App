@@ -30,21 +30,19 @@
         android:layout_height="match_parent"
         android:onClick="onClick1"
         tools:ignore="MissingConstraints">
-
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navi"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:background="#ffffff"
+            app:headerLayout="@layout/navihead"
             android:translationZ="10dp"
             app:itemIconTint="@color/gray"
             app:itemTextColor="@color/gray"
             app:menu="@menu/drawermenu"
             tools:ignore="MissingConstraints" />
-
     </androidx.drawerlayout.widget.DrawerLayout>
-
 
     <ImageView
         android:id="@+id/menuImg"
