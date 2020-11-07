@@ -1,11 +1,11 @@
-package com.example.MathApp;
+package com.example.SudoKey;
 
-import androidx.appcompat.app.AppCompatActivity;
-import java.lang.Math;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Triangle extends AppCompatActivity {
 

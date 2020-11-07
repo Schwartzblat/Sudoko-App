@@ -1,15 +1,13 @@
-package com.example.MathApp;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+package com.example.SudoKey;
 
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 

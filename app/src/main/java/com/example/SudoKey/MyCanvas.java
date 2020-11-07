@@ -1,11 +1,9 @@
-package com.example.MathApp;
+package com.example.SudoKey;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.view.View;
 
 public class MyCanvas extends View {

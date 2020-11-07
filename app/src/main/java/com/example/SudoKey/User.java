@@ -1,4 +1,4 @@
-package com.example.MathApp;
+package com.example.SudoKey;
 
 public class User {
     String username,  email,  phone, password;

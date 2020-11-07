@@ -1,12 +1,8 @@
-package com.example.MathApp;
+package com.example.SudoKey;
 
 import android.content.Context;
-import android.os.Parcel;
-import android.os.Parcelable;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;

@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "586671191057",
-    "firebase_url": "https://mathapp-alon.firebaseio.com",
-    "project_id": "mathapp-alon",
-    "storage_bucket": "mathapp-alon.appspot.com"
+    "project_number": "13109655588",
+    "firebase_url": "https://sudokey2020.firebaseio.com",
+    "project_id": "sudokey2020",
+    "storage_bucket": "sudokey2020.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:586671191057:android:6c1e748fb5062b71d12db0",
+        "mobilesdk_app_id": "1:13109655588:android:f2cbf46a5e3bf1bda680b1",
         "android_client_info": {
-          "package_name": "com.example.MathApp"
+          "package_name": "com.example.SudoKey"
         }
       },
       "oauth_client": [
         {
-          "client_id": "586671191057-kft2b28b4ljkm6fn74a0nvjm7g5m6r2d.apps.googleusercontent.com",
+          "client_id": "13109655588-okcg104i5c7br2gdusd4vaddvds2jt22.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAQXJ-H4y-QYs9HfgVQnK0VKyU1VGqAuSg"
+          "current_key": "AIzaSyBn700fLXDYvIfUSaseBHoTrBU4BDU2b9E"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "586671191057-kft2b28b4ljkm6fn74a0nvjm7g5m6r2d.apps.googleusercontent.com",
+              "client_id": "13109655588-okcg104i5c7br2gdusd4vaddvds2jt22.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

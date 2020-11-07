@@ -1,4 +1,4 @@
-package com.example.MathApp;
+package com.example.SudoKey;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

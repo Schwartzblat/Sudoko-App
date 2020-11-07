@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Math App</string>
+    <string name="app_name">SudoKey</string>
     <string name="button">Button</string>
     <string name="sudukosolver">sudukoSolver</string>
     <string name="suduku">Suduku</string>

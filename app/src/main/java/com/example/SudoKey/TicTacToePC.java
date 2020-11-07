@@ -1,4 +1,4 @@
-package com.example.MathApp;
+package com.example.SudoKey;
 
 import android.os.Bundle;
 import android.view.View;
