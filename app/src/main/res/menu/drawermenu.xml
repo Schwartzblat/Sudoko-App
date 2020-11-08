@@ -3,31 +3,25 @@
 
     <item
         android:id="@+id/solver"
-
         android:icon="@drawable/solved"
-        android:onClick="launchSudokuSolver"
         android:title="Sudoku Solver" />
 
     <item android:id="@+id/offline" android:title="Sudoku Offline"
-        android:icon="@drawable/sudokuicon"
-        android:onClick="launchSudoku">
-    </item>
+        android:icon="@drawable/sudokuicon"/>
+
 
 
     <item
         android:id="@+id/online"
         android:title="Sudoku Online"
-        android:icon="@drawable/sword"
-        android:onClick="launchRoom" />
+        android:icon="@drawable/sword"/>
     <item
         android:id="@+id/TicTacToe"
         android:title="Tic Tac Toe vs PC"
-        android:onClick="launchTicTacToePC"
         android:icon="@drawable/tic_tac_toe"/>
     <item
         android:id="@+id/update"
         android:title="Update Info"
-        android:onClick="launchUpdate"
         android:icon="@drawable/profile_user"
         />
 

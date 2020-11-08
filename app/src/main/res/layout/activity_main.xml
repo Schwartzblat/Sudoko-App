@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1B1B30"
-    android:onClick="onClick1"
     tools:context=".MainActivity">
 
     <Button
@@ -28,7 +27,6 @@
         android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:onClick="onClick1"
         tools:ignore="MissingConstraints">
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navi"
@@ -54,14 +52,14 @@
         android:onClick="openNav"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_menu_24" />
+        app:srcCompat="@drawable/whitemenu" />
 
     <Button
         android:id="@+id/closeNav"
         android:layout_width="136dp"
         android:layout_height="728dp"
         android:alpha="0"
-        android:onClick="onClick1"
+        android:onClick="closeNav"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

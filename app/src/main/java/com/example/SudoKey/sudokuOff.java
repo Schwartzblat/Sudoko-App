@@ -9,6 +9,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,14 +17,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.io.FileOutputStream;
 
 public class sudokuOff extends AppCompatActivity{
     String diff = "easy";
     Context context;
-    int reamin=0;
+    int reamin=0, status=0;
     int[][] board;
     int [][] solved;
     Sudoku sudoku;
@@ -58,7 +64,7 @@ public class sudokuOff extends AppCompatActivity{
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }});
-
+        setupNavi();
         sudoku = new Sudoku(diff, context);
         board = sudoku.getBoard();
         solved = Sudoku.solve(Sudoku.boardNumsToBoard(sudoku.boardNums));
@@ -110,7 +116,6 @@ public class sudokuOff extends AppCompatActivity{
     public void alert(String alert) {
         Toast.makeText(this, alert, Toast.LENGTH_LONG).show();
     }
-
 
     public void gameOver(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
@@ -167,6 +172,103 @@ public class sudokuOff extends AppCompatActivity{
         dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
     }
 
+    public void openNav(View v){
+        ((DrawerLayout)findViewById(R.id.frame)).openDrawer(GravityCompat.START);
+    }
 
+    public void closeNav(View v){
+        findViewById(R.id.frame).setTranslationZ(-10);
+        ((DrawerLayout)findViewById(R.id.frame)).closeDrawer(GravityCompat.START);
+    }
+
+    public void setupNavi(){
+        findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
+        findViewById(R.id.frame).setTranslationZ(-10);
+        ((DrawerLayout)findViewById(R.id.frame)).addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(@NonNull View drawerView, float slideOffset){
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View drawerView) {
+            }
+
+            @Override
+            public void onDrawerClosed(@NonNull View drawerView) {
+                findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
+                findViewById(R.id.frame).setTranslationZ(-10);
+                status = 1;
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+                if(status==0) {
+                    findViewById(R.id.closeNav).setVisibility(View.VISIBLE);
+                    findViewById(R.id.closeNav).setTranslationZ(10);
+                    findViewById(R.id.frame).setTranslationZ(10);
+                }
+                status=0;
+            }
+        });
+
+        ((NavigationView)findViewById(R.id.navi)).setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch ((String)item.getTitle()){
+                    case "Sudoku Solver":
+                        launchSudokuSolver();
+                        break;
+
+                    case "Sudoku Online":
+                        launchRoom();
+                        break;
+
+                    case "Tic Tac Toe vs PC":
+                        launchTicTacToePC();
+                        break;
+
+                    case "Update Info":
+                        launchUpdate();
+                        break;
+
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
+
+
+    }
+
+    public void launchSudokuSolver(){
+        Intent i = new Intent(this, sudokuSolver.class);
+        startActivity(i);
+    }
+
+    public void launchTriangle(View v){
+        Intent i = new Intent(this, Triangle.class);
+        startActivity(i);
+    }
+
+    public void launchTicTacToePC(){
+        Intent i = new Intent(this, TicTacToePC.class);
+        startActivity(i);
+    }
+
+    public void launchSudoku(){
+        Intent i = new Intent(this, sudokuOff.class);
+        startActivity(i);
+    }
+
+    public void launchUpdate(){
+        Intent i = new Intent(this, Update.class);
+        startActivity(i);
+    }
+
+    public void launchRoom(){
+        Intent i = new Intent(this, sudokuRoom.class);
+        startActivity(i);
+    }
 
 }
