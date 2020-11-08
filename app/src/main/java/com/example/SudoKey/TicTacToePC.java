@@ -1,22 +1,31 @@
 package com.example.SudoKey;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class TicTacToePC extends AppCompatActivity{
     private int num_of_turns = 0;
     private int [] turns = {1,0,0,0,0};
     private String status = "";
+    int navi =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tic_tac_toe_pc);
         display(R.id.place1X);
+        setupNavi();
     }
 
     private int getLast(){
@@ -342,6 +351,111 @@ public class TicTacToePC extends AppCompatActivity{
                 }
             }
         }
+    }
+
+    public void launchSudokuSolver(){
+        Intent i = new Intent(this, sudokuSolver.class);
+        startActivity(i);
+    }
+
+    public void launchTriangle(View v){
+        Intent i = new Intent(this, Triangle.class);
+        startActivity(i);
+    }
+
+    public void launchSudoku(){
+        Intent i = new Intent(this, sudokuOff.class);
+        startActivity(i);
+    }
+
+    public void launchRoom(){
+        Intent i = new Intent(this, sudokuRoom.class);
+        startActivity(i);
+    }
+
+    public void launchUpdate(){
+        Intent i = new Intent(this, Update.class);
+        startActivity(i);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(((DrawerLayout)findViewById(R.id.frame)).isDrawerOpen(GravityCompat.START)){
+            ((DrawerLayout)findViewById(R.id.frame)).closeDrawer(GravityCompat.START);
+        }
+        else{
+            finish();
+        }
+    }
+
+
+    public void openNav(View v){
+        ((DrawerLayout)findViewById(R.id.frame)).openDrawer(GravityCompat.START);
+    }
+
+    public void closeNav(View v){
+        findViewById(R.id.frame).setTranslationZ(-10);
+        ((DrawerLayout)findViewById(R.id.frame)).closeDrawer(GravityCompat.START);
+    }
+
+    public void setupNavi(){
+        findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
+        findViewById(R.id.frame).setTranslationZ(-10);
+        ((DrawerLayout)findViewById(R.id.frame)).addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(@NonNull View drawerView, float slideOffset){
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View drawerView) {
+            }
+
+            @Override
+            public void onDrawerClosed(@NonNull View drawerView) {
+                findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
+                findViewById(R.id.frame).setTranslationZ(-10);
+                navi = 1;
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+                if(navi==0) {
+                    findViewById(R.id.closeNav).setVisibility(View.VISIBLE);
+                    findViewById(R.id.closeNav).setTranslationZ(10);
+                    findViewById(R.id.frame).setTranslationZ(10);
+                }
+                navi=0;
+            }
+        });
+
+        ((NavigationView)findViewById(R.id.navi)).setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch ((String)item.getTitle()){
+                    case "Sudoku Solver":
+                        launchSudokuSolver();
+                        break;
+
+                    case "Sudoku Offline":
+                        launchSudoku();
+                        break;
+
+                    case "Sudoku Online":
+                        launchRoom();
+                        break;
+
+                    case "Update Info":
+                        launchUpdate();
+                        break;
+
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
+
+
     }
 
 }

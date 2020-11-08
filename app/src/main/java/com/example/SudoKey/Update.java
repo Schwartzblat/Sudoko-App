@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,9 +14,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -41,6 +45,7 @@ public class Update extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
         SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
+        setupNavi();
         oldUsername = data.getString("username", null);
         oldPassword = data.getString("password", null);
         oldPhone = data.getString("phone", null);
@@ -238,5 +243,108 @@ public class Update extends AppCompatActivity {
         editor.apply();
     }
 
+    public void launchSudokuSolver(){
+        Intent i = new Intent(this, sudokuSolver.class);
+        startActivity(i);
+    }
 
+    public void launchTriangle(View v){
+        Intent i = new Intent(this, Triangle.class);
+        startActivity(i);
+    }
+
+    public void launchTicTacToePC(){
+        Intent i = new Intent(this, TicTacToePC.class);
+        startActivity(i);
+    }
+
+    public void launchSudoku(){
+        Intent i = new Intent(this, sudokuOff.class);
+        startActivity(i);
+    }
+
+    public void launchRoom(){
+        Intent i = new Intent(this, sudokuRoom.class);
+        startActivity(i);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(((DrawerLayout)findViewById(R.id.frame)).isDrawerOpen(GravityCompat.START)){
+            ((DrawerLayout)findViewById(R.id.frame)).closeDrawer(GravityCompat.START);
+        }
+        else{
+            finish();
+        }
+        //moveTaskToBack(true);
+    }
+
+    public void openNav(View v){
+        ((DrawerLayout)findViewById(R.id.frame)).openDrawer(GravityCompat.START);
+    }
+
+    public void closeNav(View v){
+        findViewById(R.id.frame).setTranslationZ(-10);
+        ((DrawerLayout)findViewById(R.id.frame)).closeDrawer(GravityCompat.START);
+    }
+
+    public void setupNavi(){
+        findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
+        findViewById(R.id.frame).setTranslationZ(-10);
+        ((DrawerLayout)findViewById(R.id.frame)).addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(@NonNull View drawerView, float slideOffset){
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View drawerView) {
+            }
+
+            @Override
+            public void onDrawerClosed(@NonNull View drawerView) {
+                findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
+                findViewById(R.id.frame).setTranslationZ(-10);
+                status = 1;
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+                if(status==0) {
+                    findViewById(R.id.closeNav).setVisibility(View.VISIBLE);
+                    findViewById(R.id.closeNav).setTranslationZ(10);
+                    findViewById(R.id.frame).setTranslationZ(10);
+                }
+                status=0;
+            }
+        });
+
+        ((NavigationView)findViewById(R.id.navi)).setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch ((String)item.getTitle()){
+                    case "Sudoku Solver":
+                        launchSudokuSolver();
+                        break;
+
+                    case "Sudoku Offline":
+                        launchSudoku();
+                        break;
+
+                    case "Sudoku Online":
+                        launchRoom();
+                        break;
+
+                    case "Tic Tac Toe vs PC":
+                        launchTicTacToePC();
+                        break;
+
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
+
+
+    }
 }

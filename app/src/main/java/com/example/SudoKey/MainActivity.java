@@ -32,6 +32,28 @@ public class MainActivity extends AppCompatActivity{
         setupNavi();
     }
 
+    public void createDialog(String message, String positiveString, String negativeString){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialogCustom);
+        builder.setMessage(message).
+                setCancelable(true)
+                .setPositiveButton(positiveString, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                }).setNegativeButton(negativeString, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+    }
+
     public void launchSudokuSolver(){
         Intent i = new Intent(this, sudokuSolver.class);
         startActivity(i);
@@ -62,6 +84,7 @@ public class MainActivity extends AppCompatActivity{
         startActivity(i);
     }
 
+
     @Override
     public void onBackPressed() {
         if(((DrawerLayout)findViewById(R.id.frame)).isDrawerOpen(GravityCompat.START)){
@@ -71,28 +94,6 @@ public class MainActivity extends AppCompatActivity{
             createDialog("Are you sure you want to exit?", "yes", "no");
         }
         //moveTaskToBack(true);
-    }
-
-    public void createDialog(String message, String positiveString, String negativeString){
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialogCustom);
-        builder.setMessage(message).
-                setCancelable(true)
-                .setPositiveButton(positiveString, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        finish();
-                    }
-                }).setNegativeButton(negativeString, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.cancel();
-            }
-        });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
-        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
     }
 
     public void alert(String alert){

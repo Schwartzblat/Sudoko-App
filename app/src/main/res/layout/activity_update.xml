@@ -23,8 +23,8 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="80dp"
         android:text="Update Info"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="30sp"
@@ -202,6 +202,48 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navi"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#ffffff"
+            app:headerLayout="@layout/navihead"
+            android:translationZ="10dp"
+            app:itemIconTint="@color/gray"
+            app:itemTextColor="@color/gray"
+            app:menu="@menu/drawermenu"
+            tools:ignore="MissingConstraints" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <ImageView
+        android:id="@+id/menuImg"
+        android:layout_width="66dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:onClick="openNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/whitemenu" />
+
+    <Button
+        android:id="@+id/closeNav"
+        android:layout_width="136dp"
+        android:layout_height="728dp"
+        android:alpha="0"
+        android:onClick="closeNav"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
