@@ -9,8 +9,6 @@
     <item android:id="@+id/offline" android:title="Sudoku Offline"
         android:icon="@drawable/sudokuicon"/>
 
-
-
     <item
         android:id="@+id/online"
         android:title="Sudoku Online"
@@ -24,5 +22,9 @@
         android:title="Update Info"
         android:icon="@drawable/profile_user"
         />
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_baseline_power_settings_new_24"
+        android:title="Log Out" />
 
 </menu>

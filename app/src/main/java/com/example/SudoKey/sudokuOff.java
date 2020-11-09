@@ -23,6 +23,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.FileOutputStream;
 
@@ -232,6 +233,10 @@ public class sudokuOff extends AppCompatActivity{
                         launchUpdate();
                         break;
 
+                    case "Log Out":
+                        logOut();
+                        break;
+
                     default:
                         break;
                 }
@@ -257,11 +262,6 @@ public class sudokuOff extends AppCompatActivity{
         startActivity(i);
     }
 
-    public void launchSudoku(){
-        Intent i = new Intent(this, sudokuOff.class);
-        startActivity(i);
-    }
-
     public void launchUpdate(){
         Intent i = new Intent(this, Update.class);
         startActivity(i);
@@ -270,6 +270,30 @@ public class sudokuOff extends AppCompatActivity{
     public void launchRoom(){
         Intent i = new Intent(this, sudokuRoom.class);
         startActivity(i);
+    }
+
+    public void logOut(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+        builder.setMessage("Are you sure you want to log out?").
+                setCancelable(true)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                        mAuth.signOut();
+                        startActivity(new Intent(getApplicationContext(), logIn.class));
+                        finish();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
     }
 
 }

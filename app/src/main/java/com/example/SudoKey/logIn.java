@@ -43,7 +43,6 @@ public class logIn extends AppCompatActivity {
             }});
     }
 
-
     public void log(View v){
         //get values
         username = ((TextView)findViewById(R.id.username)).getText().toString();
@@ -84,9 +83,6 @@ public class logIn extends AppCompatActivity {
         }
     }
 
-
-
-
     public void StatusIsOk(){
         Intent i = new Intent(this, sudokuRoom.class);
         SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE ).edit();
@@ -104,5 +100,9 @@ public class logIn extends AppCompatActivity {
         Intent i = new Intent(this, signUp.class);
         startActivity(i);
         finish();
+    }
+
+    public void onBackPressed(){
+        moveTaskToBack(true);
     }
 }
