@@ -1,8 +1,11 @@
 package com.example.SudoKey;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -185,6 +188,39 @@ public class sudokuRoom extends AppCompatActivity{
     public void launchUpdate(){
         Intent i = new Intent(this, Update.class);
         startActivity(i);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(((DrawerLayout)findViewById(R.id.frame)).isDrawerOpen(GravityCompat.START)){
+            ((DrawerLayout)findViewById(R.id.frame)).closeDrawer(GravityCompat.START);
+        }
+        else{
+            createDialog("Are you sure you want to exit the app?", "yes", "no");
+        }
+        //moveTaskToBack(true);
+    }
+
+    public void createDialog(String message, String positiveString, String negativeString){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+        builder.setMessage(message).
+                setCancelable(true)
+                .setPositiveButton(positiveString, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                }).setNegativeButton(negativeString, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
     }
 
 }

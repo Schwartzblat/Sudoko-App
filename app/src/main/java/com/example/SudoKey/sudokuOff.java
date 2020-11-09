@@ -124,8 +124,6 @@ public class sudokuOff extends AppCompatActivity{
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(i);
                         finish();
                     }
                 });
@@ -160,8 +158,6 @@ public class sudokuOff extends AppCompatActivity{
                     .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int id) {
-                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(i);
                             finish();
                         }
                     }).setNegativeButton("NO", new DialogInterface.OnClickListener() {

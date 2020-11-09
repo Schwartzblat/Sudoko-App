@@ -132,7 +132,7 @@ public class signUp extends AppCompatActivity {
                             editor.putString("phone", phone);
                             editor.putString("email", email);
                             editor.apply();
-                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            Intent i = new Intent(getApplicationContext(), sudokuRoom.class);
                             startActivity(i);
                         } else {
                             System.out.println(task.getException());

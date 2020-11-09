@@ -88,7 +88,7 @@ public class logIn extends AppCompatActivity {
 
 
     public void StatusIsOk(){
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, sudokuRoom.class);
         SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE ).edit();
         editor.putString("username", username);
         editor.putString("password", password);
