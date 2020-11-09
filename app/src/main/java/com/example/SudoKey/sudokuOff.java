@@ -150,26 +150,31 @@ public class sudokuOff extends AppCompatActivity{
     }
 
     public void onBackPressed(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
-        builder.setMessage("Are you sure you want to exit?").
-                setCancelable(true)
-                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(i);
-                        finish();
-                    }
-                }).setNegativeButton("NO", new DialogInterface.OnClickListener(){
-                    @Override
-                    public void onClick(DialogInterface dialog, int id){
-                        dialog.cancel();
-                    }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
-        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+        if(((DrawerLayout)findViewById(R.id.frame)).isDrawerOpen(GravityCompat.START)){
+            ((DrawerLayout)findViewById(R.id.frame)).closeDrawer(GravityCompat.START);
+        }
+        else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+            builder.setMessage("Are you sure you want to exit?").
+                    setCancelable(true)
+                    .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(i);
+                            finish();
+                        }
+                    }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int id) {
+                    dialog.cancel();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+            dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+        }
     }
 
     public void openNav(View v){

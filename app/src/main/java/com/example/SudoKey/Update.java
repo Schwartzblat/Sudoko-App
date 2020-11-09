@@ -31,6 +31,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Objects;
 
 public class Update extends AppCompatActivity {
     ImageView imageView;
@@ -215,7 +216,8 @@ public class Update extends AppCompatActivity {
         DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Users").child("user");
         //delete the old one:
         FirebaseDatabase.getInstance().getReference("Users").child("user").child(oldUsername).removeValue();
-
+        Objects.requireNonNull(mAuth.getCurrentUser()).updatePassword(user.password);
+        Objects.requireNonNull(mAuth.getCurrentUser()).updateEmail(user.email);
         myRef.child(user.getUsername()).setValue(user);
 
         //changing the name of the image:
