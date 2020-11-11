@@ -6,903 +6,952 @@
     android:layout_height="match_parent"
     tools:context=".sudokuSolver">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/suduko_solver"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TableLayout
-        android:id="@+id/sudukoTable"
-        android:layout_width="match_parent"
+    <View
+        android:id="@+id/col6"
+        android:layout_width="3dp"
         android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="185dp"
+        android:background="@android:color/widget_edittext_dark"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/row6"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="35dp"
+        android:background="@android:color/widget_edittext_dark"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/col7"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="185dp"
+        android:background="@android:color/widget_edittext_dark"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/row7"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="35dp"
+        android:background="@android:color/widget_edittext_dark"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <TableLayout
+        android:id="@+id/tableLayout4"
+        android:layout_width="320dp"
+        android:layout_height="484dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="80dp">
 
-            <TextView
-                android:id="@+id/id0"
+            <EditText
+                android:id="@+id/place1"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id1"
+            <EditText
+                android:id="@+id/place2"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id2"
+            <EditText
+                android:id="@+id/place3"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id3"
+            <EditText
+                android:id="@+id/place4"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id4"
+            <EditText
+                android:id="@+id/place5"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id5"
+            <EditText
+                android:id="@+id/place6"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id6"
+            <EditText
+                android:id="@+id/place7"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id7"
+            <EditText
+                android:id="@+id/place8"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id8"
+            <EditText
+                android:id="@+id/place9"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
-
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/id9"
+            <EditText
+                android:id="@+id/place10"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id10"
+            <EditText
+                android:id="@+id/place11"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id11"
+            <EditText
+                android:id="@+id/place12"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id12"
+            <EditText
+                android:id="@+id/place13"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id13"
+            <EditText
+                android:id="@+id/place14"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id14"
+            <EditText
+                android:id="@+id/place15"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id15"
+            <EditText
+                android:id="@+id/place16"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id16"
+            <EditText
+                android:id="@+id/place17"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id17"
+            <EditText
+                android:id="@+id/place18"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/id18"
+            <EditText
+                android:id="@+id/place19"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id19"
+            <EditText
+                android:id="@+id/place20"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id20"
+            <EditText
+                android:id="@+id/place21"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id21"
+            <EditText
+                android:id="@+id/place22"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id22"
+            <EditText
+                android:id="@+id/place23"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id23"
+            <EditText
+                android:id="@+id/place24"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id24"
+            <EditText
+                android:id="@+id/place25"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id25"
+            <EditText
+                android:id="@+id/place26"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id26"
+            <EditText
+                android:id="@+id/place27"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/id27"
+            <EditText
+                android:id="@+id/place28"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id28"
+            <EditText
+                android:id="@+id/place29"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id29"
+            <EditText
+                android:id="@+id/place30"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id30"
+            <EditText
+                android:id="@+id/place31"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id31"
+            <EditText
+                android:id="@+id/place32"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id32"
+            <EditText
+                android:id="@+id/place33"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id33"
+            <EditText
+                android:id="@+id/place34"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id34"
+            <EditText
+                android:id="@+id/place35"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id35"
+            <EditText
+                android:id="@+id/place36"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
-
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/id36"
+            <EditText
+                android:id="@+id/place37"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id37"
+            <EditText
+                android:id="@+id/place38"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id38"
+            <EditText
+                android:id="@+id/place39"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id39"
+            <EditText
+                android:id="@+id/place40"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id41"
+            <EditText
+                android:id="@+id/place41"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id42"
+            <EditText
+                android:id="@+id/place42"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id43"
+            <EditText
+                android:id="@+id/place43"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id44"
+            <EditText
+                android:id="@+id/place44"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id45"
+            <EditText
+                android:id="@+id/place45"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/id46"
+            <EditText
+                android:id="@+id/place46"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id47"
+            <EditText
+                android:id="@+id/place47"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id48"
+            <EditText
+                android:id="@+id/place48"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id49"
+            <EditText
+                android:id="@+id/place49"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id50"
+            <EditText
+                android:id="@+id/place50"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id51"
+            <EditText
+                android:id="@+id/place51"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id52"
+            <EditText
+                android:id="@+id/place52"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id53"
+            <EditText
+                android:id="@+id/place53"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id54"
+            <EditText
+                android:id="@+id/place54"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/id55"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/place55"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id56"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/place56"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id57"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/place57"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id58"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/place58"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id59"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/place59"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id60"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/place60"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id61"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/place61"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id62"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/place62"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id63"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
-
+            <EditText
+                android:id="@+id/place63"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/id64"
+            <EditText
+                android:id="@+id/place64"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id65"
+            <EditText
+                android:id="@+id/place65"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id66"
+            <EditText
+                android:id="@+id/place66"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id67"
+            <EditText
+                android:id="@+id/place67"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id68"
+            <EditText
+                android:id="@+id/place68"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id69"
+            <EditText
+                android:id="@+id/place69"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id70"
+            <EditText
+                android:id="@+id/place70"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id71"
+            <EditText
+                android:id="@+id/place71"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id72"
+            <EditText
+                android:id="@+id/place72"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/id73"
+            <EditText
+                android:id="@+id/place73"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id74"
+            <EditText
+                android:id="@+id/place74"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id75"
+            <EditText
+                android:id="@+id/place75"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id76"
+            <EditText
+                android:id="@+id/place76"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id77"
+            <EditText
+                android:id="@+id/place77"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id78"
+            <EditText
+                android:id="@+id/place78"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id79"
+            <EditText
+                android:id="@+id/place79"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id80"
+            <EditText
+                android:id="@+id/place80"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/id81"
+            <EditText
+                android:id="@+id/place81"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp" />
         </TableRow>
     </TableLayout>
 
-    <EditText
-        android:id="@+id/sudokuNums"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="500dp"
-        android:layout_marginBottom="50dp"
-        android:autoText="false"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/enter_sudoku"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/upload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="10dp"
-        android:onClick="upload"
-        android:text="@string/set_table"
-        android:textAllCaps="false"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sudukoTable" />
-
     <Button
         android:id="@+id/solve"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="111dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="84dp"
         android:onClick="solveSudoku"
         android:text="@string/solve"
         android:textAllCaps="false"
-        app:layout_constraintStart_toEndOf="@+id/upload"
-        app:layout_constraintTop_toBottomOf="@+id/sudukoTable" />
-
-    <View
-        android:id="@+id/col1"
-        android:layout_width="3dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="175dp"
-        android:background="@android:color/widget_edittext_dark"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <View
-        android:id="@+id/col2"
-        android:layout_width="3dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="215dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="175dp"
-        android:background="@android:color/widget_edittext_dark"
-        android:visibility="visible"
+    <Button
+        android:layout_width="111dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginBottom="84dp"
+        android:onClick="clearBoard"
+        android:text="Clear All"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
-
-    <View
-        android:id="@+id/row1"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_marginTop="240dp"
-        android:background="@android:color/widget_edittext_dark"
-        android:visibility="visible"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="215dp"
-        tools:visibility="visible" />
-
-    <View
-        android:id="@+id/row2"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_marginTop="400dp"
-        android:background="@android:color/widget_edittext_dark"
-        android:visibility="visible"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="215dp"
-        tools:visibility="visible" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

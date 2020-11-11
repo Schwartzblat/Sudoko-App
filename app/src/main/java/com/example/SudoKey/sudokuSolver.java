@@ -1,10 +1,12 @@
 package com.example.SudoKey;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,59 +14,47 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class sudokuSolver extends AppCompatActivity {
+    int [] placeTable = {R.id.place1, R.id.place2, R.id.place3, R.id.place4, R.id.place5, R.id.place6, R.id.place7, R.id.place8, R.id.place9, R.id.place10, R.id.place11, R.id.place12, R.id.place13, R.id.place14, R.id.place15, R.id.place16, R.id.place17, R.id.place18, R.id.place19, R.id.place20, R.id.place21, R.id.place22, R.id.place23, R.id.place24, R.id.place25, R.id.place26, R.id.place27, R.id.place28, R.id.place29, R.id.place30, R.id.place31, R.id.place32, R.id.place33, R.id.place34, R.id.place35, R.id.place36, R.id.place37, R.id.place38, R.id.place39, R.id.place40, R.id.place41, R.id.place42, R.id.place43, R.id.place44, R.id.place45, R.id.place46, R.id.place47, R.id.place48, R.id.place49, R.id.place50, R.id.place51, R.id.place52, R.id.place53, R.id.place54, R.id.place55, R.id.place56, R.id.place57, R.id.place58, R.id.place59, R.id.place60, R.id.place61, R.id.place62, R.id.place63, R.id.place64, R.id.place65, R.id.place66, R.id.place67, R.id.place68, R.id.place69, R.id.place70, R.id.place71, R.id.place72, R.id.place73, R.id.place74, R.id.place75, R.id.place76, R.id.place77, R.id.place78, R.id.place79, R.id.place80, R.id.place81};
+    int [][]board = new int[9][9];
+    int counter;
 
-
-
+    @SuppressLint("ClickableViewAccessibility")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sudoku_solver);
-        Button solverButton = ((Button)findViewById(R.id.solve));
-        solverButton.setEnabled(false);
-        EditText sudokuNums = (EditText)(findViewById(R.id.sudokuNums));
+        for(int i=0;i<81;i++){
+            ((EditText)findViewById(placeTable[i])).setOnTouchListener(new OnTouchListener() {
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent) {
+                    ((EditText)view).setText("");
+                    return false;
+                }
+            });
+        }
     }
 
-    public void upload(View v){
-        TextView t = findViewById(R.id.sudokuNums);
-        String boardNums = t.getText().toString();
-        if(!(boardNums.length()==81)){
-            Toast.makeText(this, "Please enter a valid sudoku", Toast.LENGTH_LONG).show();
-        }
-        else{
-            int [][] board =new int [10][9];
-            char [] arr = boardNums.toCharArray();
-            for(int i =0;i<9;i++) {
-                for(int j=0;j<9;j++){
-                    board[i][j] = Character.getNumericValue(arr[i * 9 + j]);
-                }
-            }
-            board[9][0] = 0;
-            board[9][1] = 0;
-            setBoard(board);
-        }
-    }
+
 
     public void solveSudoku(View v){
-        TextView block;
-        StringBuilder str = new StringBuilder();
-        int [] array = {R.id.id0, R.id.id1, R.id.id2, R.id.id3, R.id.id4, R.id.id5, R.id.id6, R.id.id7, R.id.id8, R.id.id9, R.id.id10, R.id.id11, R.id.id12, R.id.id13, R.id.id14, R.id.id15, R.id.id16, R.id.id17, R.id.id18, R.id.id19, R.id.id20, R.id.id21, R.id.id22, R.id.id23, R.id.id24, R.id.id25, R.id.id26, R.id.id27, R.id.id28, R.id.id29, R.id.id30, R.id.id31, R.id.id32, R.id.id33, R.id.id34, R.id.id35, R.id.id36, R.id.id37, R.id.id38, R.id.id39, R.id.id41, R.id.id42, R.id.id43, R.id.id44, R.id.id45, R.id.id46, R.id.id47, R.id.id48, R.id.id49, R.id.id50, R.id.id51, R.id.id52, R.id.id53, R.id.id54, R.id.id55, R.id.id56, R.id.id57, R.id.id58, R.id.id59, R.id.id60, R.id.id61, R.id.id62, R.id.id63, R.id.id64, R.id.id65, R.id.id66, R.id.id67, R.id.id68, R.id.id69, R.id.id70, R.id.id71, R.id.id72, R.id.id73, R.id.id74, R.id.id75, R.id.id76, R.id.id77, R.id.id78, R.id.id79, R.id.id80, R.id.id81};
-        for(int i=0;i<9;i++){
-            for(int j = 0;j<9;j++) {
-                block = ((TextView) findViewById(array[9*i+j]));
-                str.append(block.getText());
+        counter=0;
+        String temp;
+        for(int x = 0;x<9;x++){
+            for(int y =0;y<9;y++){
+                temp = ((EditText)findViewById(placeTable[x*9+y])).getText().toString();
+                if(temp.equals("")){
+                    board[x][y] = 0;
+                }
+                else {
+                    board[x][y] =Integer.parseInt(temp);
+                }
             }
         }
-        String sudokuNums = str.toString();
-        int [][] board =new int [10][9];
-        char [] arr = sudokuNums.toCharArray();
-        for(int i =0;i<9;i++) {
-            for(int j=0;j<9;j++){
-                board[i][j] = Character.getNumericValue(arr[i * 9 + j]);
+        if(solve()) {
+            if (lastCheck(board)) {
+                setBoard(board);
+            } else {
+                Toast.makeText(this, "This sudoku has no solution", Toast.LENGTH_LONG).show();
             }
-        }
-        board[9][0] = 0;
-        int [][] board1 = solve(board);
-        if(lastCheck(board1)){
-            setBoard(board1);
         }
         else{
             Toast.makeText(this, "This sudoku has no solution", Toast.LENGTH_LONG).show();
@@ -73,12 +63,10 @@ public class sudokuSolver extends AppCompatActivity {
     }
 
     public void setBoard(int [][] board){
-        TextView block;
-
-        int [] array = {R.id.id0, R.id.id1, R.id.id2, R.id.id3, R.id.id4, R.id.id5, R.id.id6, R.id.id7, R.id.id8, R.id.id9, R.id.id10, R.id.id11, R.id.id12, R.id.id13, R.id.id14, R.id.id15, R.id.id16, R.id.id17, R.id.id18, R.id.id19, R.id.id20, R.id.id21, R.id.id22, R.id.id23, R.id.id24, R.id.id25, R.id.id26, R.id.id27, R.id.id28, R.id.id29, R.id.id30, R.id.id31, R.id.id32, R.id.id33, R.id.id34, R.id.id35, R.id.id36, R.id.id37, R.id.id38, R.id.id39, R.id.id41, R.id.id42, R.id.id43, R.id.id44, R.id.id45, R.id.id46, R.id.id47, R.id.id48, R.id.id49, R.id.id50, R.id.id51, R.id.id52, R.id.id53, R.id.id54, R.id.id55, R.id.id56, R.id.id57, R.id.id58, R.id.id59, R.id.id60, R.id.id61, R.id.id62, R.id.id63, R.id.id64, R.id.id65, R.id.id66, R.id.id67, R.id.id68, R.id.id69, R.id.id70, R.id.id71, R.id.id72, R.id.id73, R.id.id74, R.id.id75, R.id.id76, R.id.id77, R.id.id78, R.id.id79, R.id.id80, R.id.id81};
+        EditText block;
         for(int i=0;i<9;i++){
             for(int j = 0;j<9;j++) {
-                block = ((TextView) findViewById(array[9*i+j]));
+                block = ((EditText)findViewById(placeTable[9*i+j]));
                 block.setText(String.valueOf(board[i][j]));
             }
         }
@@ -88,11 +76,10 @@ public class sudokuSolver extends AppCompatActivity {
         }
     }
 
-    public static int [][] solve(int [][] bo) {
-        int[] find = find_empty(bo);
+    public boolean solve() {
+        int[] find = find_empty(board);
         if (find == null) {
-            bo[9][0] = 1;
-            return bo;
+            return true;
         } else {
             int row = find[0];
             int col = find[1];
@@ -100,16 +87,15 @@ public class sudokuSolver extends AppCompatActivity {
             for (int i = 1; i < 10; i++) {
                 arr[0] = row;
                 arr[1] = col;
-                if (valid(bo, i, arr)) {
-                    bo[row][col] = i;
-                    if (solve(bo)[9][0] == 1) {
-                        return bo;
+                if (valid(board, i, arr)) {
+                    board[row][col] = i;
+                    if (solve()) {
+                        return true;
                     }
-                    bo[row][col] = 0;
+                    board[row][col] = 0;
                 }
             }
-            bo[9][0] = 0;
-            return bo;
+            return false;
         }
     }
 
@@ -173,6 +159,11 @@ public class sudokuSolver extends AppCompatActivity {
         return true;
     }
 
+    public void clearBoard(View v){
+        for(int i=0;i<81;i++){
+            ((EditText)findViewById(placeTable[i])).setText("");
+        }
+    }
 
 
 
