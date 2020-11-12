@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Arrays;
 
 
 public class sudokuSolver extends AppCompatActivity {
@@ -52,11 +53,7 @@ public class sudokuSolver extends AppCompatActivity {
         }
         else {
             if (solve()) {
-                if (lastCheck(board)) {
-                    setBoard(board);
-                } else {
-                    Toast.makeText(this, "This sudoku has no solution", Toast.LENGTH_LONG).show();
-                }
+                setBoard(board);
             } else {
                 Toast.makeText(this, "This sudoku has no solution", Toast.LENGTH_LONG).show();
             }
@@ -103,7 +100,7 @@ public class sudokuSolver extends AppCompatActivity {
 
     public static boolean valid(int [][] board, int num, int [] pos){
         for(int i = 0; i<9;i++) {
-            if(board[pos[0]][i] == num && pos[ 1] !=i) {
+            if(board[pos[0]][i] == num && pos[1] !=i){
                 return false;
             }
         }
@@ -117,13 +114,9 @@ public class sudokuSolver extends AppCompatActivity {
         int box_x = (int) Math.floor(number);
         double number1 = (double) pos[0]/3;
         int box_y = (int) Math.floor(number1);
-        int [] arr = new int[2];
-
         for(int i = box_y*3;i<box_y*3+3;i++) {
             for(int j = box_x*3;j<box_x*3+3;j++) {
-                arr[0] = i;
-                arr[1]=j;
-                if(board[i][j] == num && arr != pos){
+                if(board[i][j] == num && !Arrays.equals(new int[]{i, j}, pos)){
                     return false;
                 }
             }
@@ -148,17 +141,6 @@ public class sudokuSolver extends AppCompatActivity {
             }
         }
         return null;
-    }
-
-    public static boolean lastCheck(int [][] board){
-        for(int i = 0; i<9;i++){
-            for(int j = 0; j<9;j++){
-                if(board[i][j] == 0){
-                    return false;
-                }
-            }
-        }
-        return true;
     }
 
     public void clearBoard(View v){

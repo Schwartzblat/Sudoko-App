@@ -68,8 +68,8 @@
 
     <TableLayout
         android:id="@+id/tableLayout4"
-        android:layout_width="320dp"
-        android:layout_height="484dp"
+        android:layout_width="328dp"
+        android:layout_height="495dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -177,7 +177,7 @@
             <EditText
                 android:id="@+id/place10"
                 android:layout_width="35dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
@@ -187,7 +187,7 @@
             <EditText
                 android:id="@+id/place11"
                 android:layout_width="35dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
@@ -197,7 +197,7 @@
             <EditText
                 android:id="@+id/place12"
                 android:layout_width="35dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
@@ -207,7 +207,7 @@
             <EditText
                 android:id="@+id/place13"
                 android:layout_width="35dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
@@ -217,7 +217,7 @@
             <EditText
                 android:id="@+id/place14"
                 android:layout_width="35dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
@@ -227,7 +227,7 @@
             <EditText
                 android:id="@+id/place15"
                 android:layout_width="35dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
@@ -237,7 +237,7 @@
             <EditText
                 android:id="@+id/place16"
                 android:layout_width="35dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
@@ -247,7 +247,7 @@
             <EditText
                 android:id="@+id/place17"
                 android:layout_width="35dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
@@ -257,7 +257,7 @@
             <EditText
                 android:id="@+id/place18"
                 android:layout_width="35dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
