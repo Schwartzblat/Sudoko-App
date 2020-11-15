@@ -22,6 +22,7 @@ public class sudokuSolver extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sudoku_solver);
+        //solveWithThread();
         for(int i=0;i<81;i++){
             ((EditText)findViewById(placeTable[i])).setOnTouchListener(new OnTouchListener() {
                 @Override
@@ -37,14 +38,17 @@ public class sudokuSolver extends AppCompatActivity {
 
     public void solveSudoku(View v){
         String temp;
+        int countNums =0;
         for(int x = 0;x<9;x++){
             for(int y =0;y<9;y++){
                 temp = ((EditText)findViewById(placeTable[x*9+y])).getText().toString();
                 if(temp.equals("")){
+                    temp="0";
                     board[x][y] = 0;
                 }
                 else {
                     board[x][y] =Integer.parseInt(temp);
+                    countNums++;
                 }
             }
         }
@@ -52,10 +56,15 @@ public class sudokuSolver extends AppCompatActivity {
             Toast.makeText(this, "This sudoku has no solution", Toast.LENGTH_LONG).show();
         }
         else {
-            if (solve()) {
-                setBoard(board);
-            } else {
-                Toast.makeText(this, "This sudoku has no solution", Toast.LENGTH_LONG).show();
+            if(countNums<15){
+                Toast.makeText(this, "Please enter at least 15 numbers", Toast.LENGTH_LONG).show();
+            }
+            else {
+                if (solve()) {
+                    setBoard(board);
+                } else {
+                    Toast.makeText(this, "This sudoku has no solution", Toast.LENGTH_LONG).show();
+                }
             }
         }
 
@@ -162,7 +171,15 @@ public class sudokuSolver extends AppCompatActivity {
         return true;
     }
 
+    /*public void solveWithThread(){
+        sudokuSolver sudoku = new sudokuSolver();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
 
+            }
+        }).start();
+    }*/
 
 
 

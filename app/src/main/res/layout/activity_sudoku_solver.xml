@@ -70,8 +70,11 @@
         android:id="@+id/tableLayout4"
         android:layout_width="328dp"
         android:layout_height="495dp"
-        android:layout_marginStart="30dp"
         android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/solve"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -936,22 +939,28 @@
         android:layout_width="111dp"
         android:layout_height="62dp"
         android:layout_marginStart="64dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginTop="500dp"
         android:onClick="solveSudoku"
         android:text="@string/solve"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/button3"
         android:layout_width="111dp"
         android:layout_height="62dp"
         android:layout_marginStart="216dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="84dp"
         android:layout_marginBottom="84dp"
         android:onClick="clearBoard"
         android:text="Clear All"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
