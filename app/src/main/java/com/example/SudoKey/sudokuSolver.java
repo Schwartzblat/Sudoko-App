@@ -1,7 +1,12 @@
 package com.example.SudoKey;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -9,7 +14,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Arrays;
 
@@ -17,6 +28,8 @@ import java.util.Arrays;
 public class sudokuSolver extends AppCompatActivity {
     int [] placeTable = {R.id.place1, R.id.place2, R.id.place3, R.id.place4, R.id.place5, R.id.place6, R.id.place7, R.id.place8, R.id.place9, R.id.place10, R.id.place11, R.id.place12, R.id.place13, R.id.place14, R.id.place15, R.id.place16, R.id.place17, R.id.place18, R.id.place19, R.id.place20, R.id.place21, R.id.place22, R.id.place23, R.id.place24, R.id.place25, R.id.place26, R.id.place27, R.id.place28, R.id.place29, R.id.place30, R.id.place31, R.id.place32, R.id.place33, R.id.place34, R.id.place35, R.id.place36, R.id.place37, R.id.place38, R.id.place39, R.id.place40, R.id.place41, R.id.place42, R.id.place43, R.id.place44, R.id.place45, R.id.place46, R.id.place47, R.id.place48, R.id.place49, R.id.place50, R.id.place51, R.id.place52, R.id.place53, R.id.place54, R.id.place55, R.id.place56, R.id.place57, R.id.place58, R.id.place59, R.id.place60, R.id.place61, R.id.place62, R.id.place63, R.id.place64, R.id.place65, R.id.place66, R.id.place67, R.id.place68, R.id.place69, R.id.place70, R.id.place71, R.id.place72, R.id.place73, R.id.place74, R.id.place75, R.id.place76, R.id.place77, R.id.place78, R.id.place79, R.id.place80, R.id.place81};
     int [][]board = new int[9][9];
+    int status=0;
+
     @SuppressLint("ClickableViewAccessibility")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +43,11 @@ public class sudokuSolver extends AppCompatActivity {
                 }
             });
         }
+        setupNavi();
     }
 
-
-
-    public void solveSudoku(View v){
-        /*String temp;
+   /* public void solveSudoku(View v){
+        String temp;
         int countNums =0;
         for(int x = 0;x<9;x++){
             for(int y =0;y<9;y++){
@@ -64,10 +76,10 @@ public class sudokuSolver extends AppCompatActivity {
                     Toast.makeText(this, "This sudoku has no solution", Toast.LENGTH_LONG).show();
                 }
             }
-        }*/
+        }
         solveWithThread();
 
-    }
+    }*/
 
     public void setBoard(int [][] board){
         EditText block;
@@ -170,8 +182,7 @@ public class sudokuSolver extends AppCompatActivity {
         return true;
     }
 
-
-    public void solveWithThread(){
+    public void solveSudoku(View v){
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -221,8 +232,127 @@ public class sudokuSolver extends AppCompatActivity {
         }).start();
     }
 
+    public void openNav(View v){
+        ((DrawerLayout)findViewById(R.id.frame)).openDrawer(GravityCompat.START);
+    }
+
+    public void closeNav(View v){
+        findViewById(R.id.frame).setTranslationZ(-10);
+        ((DrawerLayout)findViewById(R.id.frame)).closeDrawer(GravityCompat.START);
+    }
+
+    public void setupNavi(){
+        findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
+        findViewById(R.id.frame).setTranslationZ(-10);
+        ((DrawerLayout)findViewById(R.id.frame)).addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(@NonNull View drawerView, float slideOffset){
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View drawerView) {
+            }
+
+            @Override
+            public void onDrawerClosed(@NonNull View drawerView) {
+                findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
+                findViewById(R.id.frame).setTranslationZ(-10);
+                status = 1;
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+                if(status==0) {
+                    findViewById(R.id.closeNav).setVisibility(View.VISIBLE);
+                    findViewById(R.id.closeNav).setTranslationZ(10);
+                    findViewById(R.id.frame).setTranslationZ(10);
+                }
+                status=0;
+            }
+        });
+
+        ((NavigationView)findViewById(R.id.navi)).setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch ((String)item.getTitle()){
+                    case "Sudoku Offline":
+                        launchSudoku();
+                        break;
+
+                    case "Sudoku Online":
+                        launchRoom();
+                        break;
+
+                    case "Tic Tac Toe vs PC":
+                        launchTicTacToePC();
+                        break;
+
+                    case "Update Info":
+                        launchUpdate();
+                        break;
+
+                    case "Log Out":
+                        logOut();
+                        break;
+
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
 
 
+    }
+
+    public void launchTriangle(View v){
+        Intent i = new Intent(this, Triangle.class);
+        startActivity(i);
+    }
+
+    public void launchTicTacToePC(){
+        Intent i = new Intent(this, TicTacToePC.class);
+        startActivity(i);
+    }
+
+    public void launchUpdate(){
+        Intent i = new Intent(this, Update.class);
+        startActivity(i);
+    }
+
+    public void launchRoom(){
+        Intent i = new Intent(this, sudokuRoom.class);
+        startActivity(i);
+    }
+
+    public void logOut(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+        builder.setMessage("Are you sure you want to log out?").
+                setCancelable(true)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                        mAuth.signOut();
+                        startActivity(new Intent(getApplicationContext(), logIn.class));
+                        finish();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+    }
+
+    public void launchSudoku(){
+        Intent i = new Intent(this, sudokuOff.class);
+        startActivity(i);
+    }
 
 
 
