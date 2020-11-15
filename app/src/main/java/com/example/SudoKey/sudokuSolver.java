@@ -17,12 +17,11 @@ import java.util.Arrays;
 public class sudokuSolver extends AppCompatActivity {
     int [] placeTable = {R.id.place1, R.id.place2, R.id.place3, R.id.place4, R.id.place5, R.id.place6, R.id.place7, R.id.place8, R.id.place9, R.id.place10, R.id.place11, R.id.place12, R.id.place13, R.id.place14, R.id.place15, R.id.place16, R.id.place17, R.id.place18, R.id.place19, R.id.place20, R.id.place21, R.id.place22, R.id.place23, R.id.place24, R.id.place25, R.id.place26, R.id.place27, R.id.place28, R.id.place29, R.id.place30, R.id.place31, R.id.place32, R.id.place33, R.id.place34, R.id.place35, R.id.place36, R.id.place37, R.id.place38, R.id.place39, R.id.place40, R.id.place41, R.id.place42, R.id.place43, R.id.place44, R.id.place45, R.id.place46, R.id.place47, R.id.place48, R.id.place49, R.id.place50, R.id.place51, R.id.place52, R.id.place53, R.id.place54, R.id.place55, R.id.place56, R.id.place57, R.id.place58, R.id.place59, R.id.place60, R.id.place61, R.id.place62, R.id.place63, R.id.place64, R.id.place65, R.id.place66, R.id.place67, R.id.place68, R.id.place69, R.id.place70, R.id.place71, R.id.place72, R.id.place73, R.id.place74, R.id.place75, R.id.place76, R.id.place77, R.id.place78, R.id.place79, R.id.place80, R.id.place81};
     int [][]board = new int[9][9];
-
+    int count;
     @SuppressLint("ClickableViewAccessibility")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sudoku_solver);
-        //solveWithThread();
         for(int i=0;i<81;i++){
             ((EditText)findViewById(placeTable[i])).setOnTouchListener(new OnTouchListener() {
                 @Override
@@ -37,7 +36,7 @@ public class sudokuSolver extends AppCompatActivity {
 
 
     public void solveSudoku(View v){
-        String temp;
+        /*String temp;
         int countNums =0;
         for(int x = 0;x<9;x++){
             for(int y =0;y<9;y++){
@@ -66,7 +65,8 @@ public class sudokuSolver extends AppCompatActivity {
                     Toast.makeText(this, "This sudoku has no solution", Toast.LENGTH_LONG).show();
                 }
             }
-        }
+        }*/
+        solveWithThread();
 
     }
 
@@ -85,6 +85,7 @@ public class sudokuSolver extends AppCompatActivity {
     }
 
     public boolean solve() {
+        count++;
         int[] find = find_empty(board);
         if (find == null) {
             return true;
@@ -171,15 +172,60 @@ public class sudokuSolver extends AppCompatActivity {
         return true;
     }
 
-    /*public void solveWithThread(){
-        sudokuSolver sudoku = new sudokuSolver();
+    public void alert(String msg){
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+    }
+
+    public void solveWithThread(){
         new Thread(new Runnable() {
             @Override
             public void run() {
+                String temp;
+                int countNums =0;
+                for(int x = 0;x<9;x++){
+                    for(int y =0;y<9;y++){
+                        temp = ((EditText)findViewById(placeTable[x*9+y])).getText().toString();
+                        if(temp.equals("")){
+                            board[x][y] = 0;
+                        }
+                        else {
+                            board[x][y] =Integer.parseInt(temp);
+                            countNums++;
+                        }
+                    }
+                }
+                if(!validBoard(board)){
+                    sudokuSolver.this.runOnUiThread(new Runnable() {
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "This sudoku has no solution", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                else {
+                    if(countNums<15){
+                        sudokuSolver.this.runOnUiThread(new Runnable() {
+                            public void run() {
+                                Toast.makeText(getApplicationContext(), "Please enter at least 15 numbers", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                    else {
+                        if (solve()) {
+                            setBoard(board);
+                            System.out.println("counter "+count);
+                        } else {
+                            sudokuSolver.this.runOnUiThread(new Runnable() {
+                                public void run() {
+                                    Toast.makeText(getApplicationContext(), "This sudoku has no solution", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                    }
+                }
 
             }
         }).start();
-    }*/
+    }
 
 
 
