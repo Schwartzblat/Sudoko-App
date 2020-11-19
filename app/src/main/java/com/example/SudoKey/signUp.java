@@ -1,9 +1,12 @@
 package com.example.SudoKey;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,10 +27,11 @@ public class signUp extends AppCompatActivity {
     String status, username, password, phone, email;
     private FirebaseAuth mAuth;
     DataSnapshot data;
+    int [] inputID = {R.id.username, R.id.email, R.id.phone, R.id.password, R.id.passwordConfirm};
 
 
 
-
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,19 @@ public class signUp extends AppCompatActivity {
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {}});
+        for(int i=0;i<inputID.length;i++){
+            ((EditText)findViewById(inputID[i])).setOnTouchListener(new View.OnTouchListener() {
+                @SuppressLint("UseCompatLoadingForDrawables")
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent){
+                    for(int j=0;j<inputID.length;j++){
+                        findViewById(inputID[j]).setBackground(getDrawable(R.drawable.border));
+                    }
+                    view.setBackground(getDrawable(R.drawable.border_touch));
+                    return false;
+                }
+            });
+        }
     }
 
     public void alert(String alert) {
