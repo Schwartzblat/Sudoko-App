@@ -1,9 +1,13 @@
 package com.example.SudoKey;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +30,7 @@ public class logIn extends AppCompatActivity {
     int status = 0;
     FirebaseAuth mAuth;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +44,26 @@ public class logIn extends AppCompatActivity {
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }});
+
+        ((EditText)findViewById(R.id.username)).setOnTouchListener(new OnTouchListener() {
+            @SuppressLint("UseCompatLoadingForDrawables")
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                findViewById(R.id.password).setBackground(getDrawable(R.drawable.border));
+                findViewById(R.id.username).setBackground(getDrawable(R.drawable.border_touch));
+                return false;
+            }
+        });
+        ((EditText)findViewById(R.id.password)).setOnTouchListener(new OnTouchListener() {
+            @SuppressLint("UseCompatLoadingForDrawables")
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                findViewById(R.id.username).setBackground(getDrawable(R.drawable.border));
+                findViewById(R.id.password).setBackground(getDrawable(R.drawable.border_touch));
+                return false;
+            }
+        });
     }
 
     public void log(View v){

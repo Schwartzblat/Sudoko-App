@@ -9,7 +9,6 @@
         android:name="android.hardware.camera.autofocus"
         android:required="false" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,23 +16,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.SudoKey.Update"/>
-        <activity android:name="com.example.SudoKey.SudokuOn" />
-        <activity android:name="com.example.SudoKey.waitingRoom" />
-        <activity android:name="com.example.SudoKey.sudokuRoom" />
-        <activity android:name="com.example.SudoKey.sudokuOff" />
-        <activity android:name="com.example.SudoKey.logIn" />
-        <activity android:name="com.example.SudoKey.signUp">
+        <activity android:name=".Update" />
+        <activity android:name=".SudokuOn" />
+        <activity android:name=".waitingRoom" />
+        <activity android:name=".sudokuRoom" />
+        <activity android:name=".sudokuOff" />
+        <activity android:name=".logIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.SudoKey.TicTacToePC" />
-        <activity android:name="com.example.SudoKey.Triangle" />
-        <activity android:name="com.example.SudoKey.sudokuSolver" />
-        <activity android:name="com.example.SudoKey.MainActivity" />
+        <activity android:name=".signUp" />
+        <activity android:name=".TicTacToePC" />
+        <activity android:name=".Triangle" />
+        <activity android:name=".sudokuSolver" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

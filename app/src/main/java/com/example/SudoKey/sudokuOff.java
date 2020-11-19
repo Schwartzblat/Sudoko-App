@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,6 +61,9 @@ public class sudokuOff extends AppCompatActivity{
                 board = sudoku.getBoard();
                 solved = Sudoku.solve(Sudoku.boardNumsToBoard(sudoku.boardNums));
                 setBoard();
+                for (int i =0;i<81;i++){
+                    ((EditText)findViewById(textTable[i])).setText("");
+                }
             }
 
             @Override
