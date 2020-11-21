@@ -6,337 +6,330 @@
     android:layout_height="match_parent"
     tools:context=".TicTacToePC">
 
-    <Button
-        android:id="@+id/place9"
-        android:layout_width="146dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="328dp"
-        android:alpha="0"
-        android:contentDescription="9"
-        android:cursorVisible="false"
-        android:onClick="click"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/board"
-        android:layout_width="400dp"
-        android:layout_height="434dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="405dp"
+        android:layout_height="423dp"
         android:layout_marginBottom="228dp"
         android:contentDescription="@string/board"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuImg"
         app:srcCompat="@drawable/board" />
-
-    <ImageView
-        android:id="@+id/place8X"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="348dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/x" />
-
-    <Button
-        android:id="@+id/place8"
-        android:layout_width="114dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="328dp"
-        android:alpha="0"
-        android:contentDescription="8"
-        android:cursorVisible="false"
-        android:onClick="click"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/place1O"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="532dp"
-        android:clickable="false"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/o" />
-
-    <ImageView
-        android:id="@+id/place3O"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginBottom="532dp"
-        android:adjustViewBounds="false"
-        android:clickable="false"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/o" />
-
-    <ImageView
-        android:id="@+id/place4O"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="420dp"
-        android:clickable="false"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/o" />
-
-    <ImageView
-        android:id="@+id/place5O"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginBottom="420dp"
-        android:clickable="false"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/o" />
-
-    <ImageView
-        android:id="@+id/place6O"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginBottom="420dp"
-        android:clickable="false"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/o" />
-
-    <ImageView
-        android:id="@+id/place7O"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="308dp"
-        android:clickable="false"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/o" />
-
-    <ImageView
-        android:id="@+id/place8O"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginBottom="308dp"
-        android:clickable="false"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/o" />
-
-    <ImageView
-        android:id="@+id/place9O"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginBottom="308dp"
-        android:clickable="false"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/o" />
-
-    <ImageView
-        android:id="@+id/place2O"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginBottom="532dp"
-        android:clickable="false"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/o" />
-
-    <ImageView
-        android:id="@+id/place9X"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="288dp"
-        android:layout_marginTop="340dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/x" />
-
-    <ImageView
-        android:id="@+id/place1X"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="28dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/place4O"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/x" />
-
-    <ImageView
-        android:id="@+id/place2X"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="168dp"
-        android:layout_marginBottom="28dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/place4O"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/x" />
-
-    <ImageView
-        android:id="@+id/place3X"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="288dp"
-        android:layout_marginBottom="28dp"
-        android:contentDescription="@string/todo"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/place4O"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/x" />
-
-    <ImageView
-        android:id="@+id/place4X"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="28dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/place7O"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/x" />
-
-    <ImageView
-        android:id="@+id/place5X"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="28dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/place2X"
-        app:srcCompat="@drawable/x" />
-
-    <ImageView
-        android:id="@+id/place6X"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginBottom="24dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/place7O"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/x" />
-
-    <ImageView
-        android:id="@+id/place7X"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="340dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/x" />
-
-    <Button
-        android:id="@+id/place4"
-        android:layout_width="138dp"
-        android:layout_height="102dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="224dp"
-        android:alpha="0"
-        android:contentDescription="4"
-        android:cursorVisible="false"
-        android:onClick="click"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/place5"
-        android:layout_width="115dp"
-        android:layout_height="114dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="216dp"
-        android:alpha="0"
-        android:contentDescription="5"
-        android:cursorVisible="false"
-        android:onClick="click"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/place6"
-        android:layout_width="146dp"
-        android:layout_height="111dp"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="216dp"
-        android:alpha="0"
-        android:contentDescription="6"
-        android:cursorVisible="false"
-        android:onClick="click"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/place7"
-        android:layout_width="139dp"
-        android:layout_height="143dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="328dp"
-        android:alpha="0"
-        android:contentDescription="7"
-        android:cursorVisible="false"
-        android:onClick="click"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/place3"
-        android:layout_width="148dp"
-        android:layout_height="102dp"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="88dp"
-        android:alpha="0"
-        android:contentDescription="3"
-        android:cursorVisible="false"
-        android:onClick="click"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/place2"
-        android:layout_width="116dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="115dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="270dp"
         android:alpha="0"
         android:contentDescription="2"
         android:cursorVisible="false"
         android:onClick="click"
         android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@+id/board"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:layout_constraintVertical_bias="0.202" />
+
+    <Button
+        android:id="@+id/place3"
+        android:layout_width="151dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="285dp"
+        android:alpha="0"
+        android:contentDescription="3"
+        android:cursorVisible="false"
+        android:onClick="click"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/place4"
+        android:layout_width="146dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginEnd="263dp"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        android:alpha="0"
+        android:contentDescription="4"
+        android:cursorVisible="false"
+        android:onClick="click"
+        android:visibility="visible"
+         />
+
+    <Button
+        android:id="@+id/place5"
+        android:layout_width="115dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="150dp"
+        android:alpha="0"
+        android:contentDescription="5"
+        android:cursorVisible="false"
+        android:onClick="click"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board" />
+
+    <Button
+        android:id="@+id/place6"
+        android:layout_width="146dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="113dp"
+        android:layout_marginBottom="152dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        android:alpha="0"
+        android:contentDescription="6"
+        android:cursorVisible="false"
+        android:onClick="click"
+        android:visibility="visible"
+         />
+
+    <Button
+        android:id="@+id/place7"
+        android:layout_width="147dp"
+        android:layout_height="146dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="225dp"
+        android:layout_marginEnd="263dp"
+        android:layout_marginBottom="10dp"
+        android:alpha="0"
+        android:contentDescription="7"
+        android:cursorVisible="false"
+        android:onClick="click"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board" />
+
+    <Button
+        android:id="@+id/place8"
+        android:layout_width="111dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="1dp"
+        android:alpha="0"
+        android:contentDescription="8"
+        android:cursorVisible="false"
+        android:onClick="click"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board" />
+
+    <Button
+        android:id="@+id/place9"
+        android:layout_width="145dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="10dp"
+        android:alpha="0"
+        android:contentDescription="9"
+        android:cursorVisible="false"
+        android:onClick="click"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board" />
+
+    <ImageView
+        android:id="@+id/pos1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginBottom="280dp"
+        app:tint="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/pos2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="280dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:layout_constraintVertical_bias="0.59000003"
+        app:srcCompat="@drawable/x"
+        app:tint="#000000" />
+
+    <ImageView
+        android:id="@+id/pos3"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="280dp"
+        app:tint="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:layout_constraintVertical_bias="0.59"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/pos4"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginBottom="150dp"
+        app:tint="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:layout_constraintVertical_bias="0.59"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/pos5"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="150dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:layout_constraintVertical_bias="0.59"
+        app:srcCompat="@drawable/x"
+        app:tint="#000000" />
+
+    <ImageView
+        android:id="@+id/pos6"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="150dp"
+        app:tint="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:layout_constraintVertical_bias="0.59"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/pos7"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginBottom="10dp"
+        app:tint="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:layout_constraintVertical_bias="0.59"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/pos8"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:layout_constraintVertical_bias="0.59"
+        app:srcCompat="@drawable/x"
+        app:tint="#000000" />
+
+    <ImageView
+        android:id="@+id/pos9"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        app:tint="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/board"
+        app:layout_constraintEnd_toEndOf="@id/board"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/board"
+        app:layout_constraintTop_toTopOf="@+id/board"
+        app:layout_constraintVertical_bias="0.59"
+        app:srcCompat="@drawable/x" />
 
     <Button
         android:id="@+id/clear"
@@ -364,20 +357,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginBottom="500dp"
-        android:text="@string/status"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="55sp"
-        android:textStyle="bold|italic"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/frame"
         android:layout_width="match_parent"
@@ -396,6 +375,20 @@
             app:menu="@menu/drawermenu"
             tools:ignore="MissingConstraints" />
     </androidx.drawerlayout.widget.DrawerLayout>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="500dp"
+        android:text="@string/status"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="55sp"
+        android:textStyle="bold|italic"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/menuImg"

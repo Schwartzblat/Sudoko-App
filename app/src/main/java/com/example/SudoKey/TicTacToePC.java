@@ -1,5 +1,6 @@
 package com.example.SudoKey;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,11 +25,13 @@ public class TicTacToePC extends AppCompatActivity{
     private int [] turns = {1,0,0,0,0};
     private String status = "";
     int navi =0;
+    int [] place = {0, R.id.pos1, R.id.pos2, R.id.pos3, R.id.pos4, R.id.pos5, R.id.pos6, R.id.pos7, R.id.pos8, R.id.pos9};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tic_tac_toe_pc);
-        display(R.id.place1X);
+        display(R.id.pos1);
         setupNavi();
     }
 
@@ -42,8 +45,18 @@ public class TicTacToePC extends AppCompatActivity{
         return counter;
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     public void display(int id){
         ImageView place = (ImageView) findViewById(id);
+        place.setImageDrawable(getDrawable(R.drawable.x));
+        if(place.getVisibility() == View.INVISIBLE) {
+            place.setVisibility(View.VISIBLE);
+        }
+    }
+    @SuppressLint("UseCompatLoadingForDrawables")
+    public void displayO(int id){
+        ImageView place = (ImageView) findViewById(id);
+        place.setImageDrawable(getDrawable(R.drawable.o));
         if(place.getVisibility() == View.INVISIBLE) {
             place.setVisibility(View.VISIBLE);
         }
@@ -64,12 +77,11 @@ public class TicTacToePC extends AppCompatActivity{
     }
 
     public void click(View v){
-        int [] placeO = {0, R.id.place1O, R.id.place2O, R.id.place3O, R.id.place4O, R.id.place5O, R.id.place6O, R.id.place7O, R.id.place8O, R.id.place9O};
         v.setEnabled(false);
         num_of_turns++;
         int last = Integer.parseInt((String) v.getContentDescription());
         turns[getLast()] = last;
-        display(placeO[last]);
+        displayO(place[last]);
         doMove();
         if(!status.equals("")){
             gameOver();
@@ -90,12 +102,7 @@ public class TicTacToePC extends AppCompatActivity{
             Button button = findViewById(value);
             button.setEnabled(true);
         }
-        int [] placeO = {0, R.id.place1O, R.id.place2O, R.id.place3O, R.id.place4O, R.id.place5O, R.id.place6O, R.id.place7O, R.id.place8O, R.id.place9O};
-        for(int i=1;i<placeO.length;i++){
-            ImageView place = (ImageView) findViewById(placeO[i]);
-            place.setVisibility(View.INVISIBLE);
-        }
-        int [] placeX = {0, R.id.place2X, R.id.place3X, R.id.place4X, R.id.place5X, R.id.place6X, R.id.place7X, R.id.place8X, R.id.place9X};
+        int [] placeX = {0, R.id.pos2, R.id.pos3, R.id.pos4, R.id.pos5, R.id.pos6, R.id.pos7, R.id.pos8, R.id.pos9};
         for(int i=1;i<placeX.length;i++){
             ImageView place = (ImageView) findViewById(placeX[i]);
             place.setVisibility(View.INVISIBLE);
@@ -110,7 +117,6 @@ public class TicTacToePC extends AppCompatActivity{
         TextView gameover = findViewById(R.id.gameOver);
         STATUS.setVisibility(View.INVISIBLE);
         gameover.setVisibility(View.INVISIBLE);
-        display(R.id.place1X);
     }
     
     public void disable(int num){
@@ -124,7 +130,6 @@ public class TicTacToePC extends AppCompatActivity{
     }
 
     public void doMove() {
-        int[] place = {0, R.id.place1X, R.id.place2X, R.id.place3X, R.id.place4X, R.id.place5X, R.id.place6X, R.id.place7X, R.id.place8X, R.id.place9X};
         if (num_of_turns > 0) {
             //2, 4, 6, 8:
             if (turns[1] % 2 == 0) {
