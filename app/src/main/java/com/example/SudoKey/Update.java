@@ -85,17 +85,18 @@ public class Update extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-        imageView.setImageBitmap(bitmap);
-        imageView.setVisibility(View.VISIBLE);
-        try{
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
-            FirebaseStorage.getInstance().getReference(oldUsername).putBytes(byteArray);
-        }
-        catch (Exception e){
-            e.printStackTrace();
+        if(resultCode==-1) {
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(bitmap);
+            imageView.setVisibility(View.VISIBLE);
+            try {
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+                FirebaseStorage.getInstance().getReference(oldUsername).putBytes(byteArray);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
