@@ -15,25 +15,33 @@
       android:onClick="check"
       android:text="Check Move"
       android:textAllCaps="false"
-
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent" />
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
   <Spinner
       android:id="@+id/spinner"
-      android:layout_width="254dp"
-      android:layout_height="49dp"
-      android:layout_marginStart="12dp"
-      android:layout_marginBottom="12dp"
+      android:layout_width="213dp"
+      android:layout_height="47dp"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginEnd="10dp"
+      android:layout_marginBottom="5dp"
       app:layout_constraintBottom_toTopOf="@+id/check"
-      app:layout_constraintStart_toEndOf="@+id/textView9" />
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toEndOf="@+id/textView9"
+      app:layout_constraintTop_toBottomOf="@+id/tableLayout5" />
 
   <TableLayout
       android:id="@+id/sudukoTable"
-      android:layout_width="313dp"
-      android:layout_height="473dp"
-      android:layout_marginStart="52dp"
-      android:layout_marginTop="64dp"
+      android:layout_width="338dp"
+      android:layout_height="523dp"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="80dp"
+      android:layout_marginBottom="145dp"
+      app:layout_constraintBottom_toBottomOf="@+id/frame"
+      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent">
 
@@ -818,13 +826,15 @@
   <View
       android:id="@+id/col"
       android:layout_width="3dp"
-      android:layout_height="match_parent"
-      android:layout_marginStart="146dp"
-      android:layout_marginTop="72dp"
-      android:layout_marginBottom="185dp"
+      android:layout_height="480dp"
+      android:layout_marginStart="90dp"
+      android:layout_marginTop="85dp"
+      android:layout_marginEnd="400dp"
+      android:layout_marginBottom="180dp"
       android:background="@android:color/widget_edittext_dark"
       android:visibility="visible"
       app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toEndOf="@+id/sudukoTable"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
@@ -836,12 +846,14 @@
       android:layout_width="match_parent"
       android:layout_height="3dp"
       android:layout_marginStart="25dp"
-      android:layout_marginTop="224dp"
+      android:layout_marginTop="300dp"
       android:layout_marginEnd="25dp"
+      android:layout_marginBottom="240dp"
       android:background="@android:color/widget_edittext_dark"
       android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintHorizontal_bias="0.47"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       tools:visibility="visible" />
@@ -850,12 +862,14 @@
       android:id="@+id/col3"
       android:layout_width="3dp"
       android:layout_height="match_parent"
-      android:layout_marginStart="254dp"
-      android:layout_marginTop="72dp"
-      android:layout_marginBottom="185dp"
+      android:layout_marginStart="215dp"
+      android:layout_marginTop="85dp"
+      android:layout_marginEnd="115dp"
+      android:layout_marginBottom="180dp"
       android:background="@android:color/widget_edittext_dark"
       android:visibility="visible"
       app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="1.0"
@@ -866,10 +880,12 @@
       android:layout_width="match_parent"
       android:layout_height="3dp"
       android:layout_marginStart="25dp"
-      android:layout_marginTop="388dp"
+      android:layout_marginTop="150dp"
       android:layout_marginEnd="25dp"
+      android:layout_marginBottom="415dp"
       android:background="@android:color/widget_edittext_dark"
       android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toStartOf="parent"
@@ -877,10 +893,13 @@
       tools:visibility="visible" />
 
   <TableLayout
+      android:id="@+id/tableLayout5"
       android:layout_width="320dp"
-      android:layout_height="484dp"
-      android:layout_marginStart="52dp"
-      android:layout_marginTop="60dp"
+      android:layout_height="520dp"
+      android:layout_marginTop="65dp"
+      android:layout_marginBottom="140dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent">
 
@@ -1773,14 +1792,17 @@
   <Button
       android:layout_width="130dp"
       android:layout_height="69dp"
-      android:layout_marginStart="220dp"
+      android:layout_marginStart="200dp"
+      android:layout_marginEnd="10dp"
       android:layout_marginBottom="16dp"
       android:onClick="download"
       android:text="Download"
       android:textAllCaps="false"
       android:textSize="18sp"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent" />
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
   <ImageView
       android:id="@+id/menuImg"
@@ -1796,8 +1818,8 @@
 
   <Button
       android:id="@+id/closeNav"
-      android:layout_width="136dp"
-      android:layout_height="728dp"
+      android:layout_width="130dp"
+      android:layout_height="match_parent"
       android:alpha="0"
       android:onClick="closeNav"
       android:text="Button"

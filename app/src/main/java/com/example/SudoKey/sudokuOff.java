@@ -60,6 +60,9 @@ public class sudokuOff extends AppCompatActivity{
                 sudoku = new Sudoku(diff, context);
                 board = sudoku.getBoard();
                 solved = Sudoku.solve(Sudoku.boardNumsToBoard(sudoku.boardNums));
+                for(int i=0;i<81;i++){
+                    ((EditText)findViewById(textTable[i])).setText("");
+                }
                 setBoard();
                 for (int i =0;i<81;i++){
                     ((EditText)findViewById(textTable[i])).setText("");
@@ -253,11 +256,6 @@ public class sudokuOff extends AppCompatActivity{
 
     public void launchSudokuSolver(){
         Intent i = new Intent(this, sudokuSolver.class);
-        startActivity(i);
-    }
-
-    public void launchTriangle(View v){
-        Intent i = new Intent(this, Triangle.class);
         startActivity(i);
     }
 
