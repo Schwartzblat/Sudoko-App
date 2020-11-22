@@ -813,7 +813,7 @@
         android:layout_marginStart="138dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="225dp"
-        android:background="@android:color/widget_edittext_dark"
+        android:background="#000000"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sudukoTable"
@@ -828,7 +828,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="185dp"
         android:layout_marginEnd="55dp"
-        android:background="@android:color/widget_edittext_dark"
+        android:background="#000000"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -842,7 +842,7 @@
         android:layout_marginStart="245dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="225dp"
-        android:background="@android:color/widget_edittext_dark"
+        android:background="#000000"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -856,7 +856,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="350dp"
         android:layout_marginEnd="50dp"
-        android:background="@android:color/widget_edittext_dark"
+        android:background="#000000"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -883,7 +883,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -893,7 +893,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -903,7 +903,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -913,7 +913,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -923,7 +923,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -933,7 +933,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -943,7 +943,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -953,7 +953,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -963,7 +963,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
         </TableRow>
@@ -979,7 +979,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -989,7 +989,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -999,7 +999,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1009,7 +1009,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1019,7 +1019,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1029,7 +1029,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1039,7 +1039,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1049,7 +1049,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1059,7 +1059,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
         </TableRow>
 
@@ -1074,7 +1074,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1084,7 +1084,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1094,7 +1094,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1104,7 +1104,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1114,7 +1114,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1124,7 +1124,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1134,7 +1134,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1144,7 +1144,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1154,7 +1154,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
         </TableRow>
 
@@ -1169,7 +1169,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1179,7 +1179,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1189,7 +1189,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1199,7 +1199,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1209,7 +1209,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1219,7 +1219,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1229,7 +1229,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1239,7 +1239,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1249,7 +1249,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
         </TableRow>
 
@@ -1264,7 +1264,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1274,7 +1274,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1284,7 +1284,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1294,7 +1294,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1304,7 +1304,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1314,7 +1314,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1324,7 +1324,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1334,7 +1334,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1344,7 +1344,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
         </TableRow>
 
@@ -1359,7 +1359,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1369,7 +1369,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1379,7 +1379,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1389,7 +1389,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1399,7 +1399,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1409,7 +1409,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1419,7 +1419,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1429,7 +1429,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1439,7 +1439,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
         </TableRow>
 
@@ -1454,7 +1454,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1464,7 +1464,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1474,7 +1474,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1484,7 +1484,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1494,7 +1494,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1504,7 +1504,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1514,7 +1514,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1524,7 +1524,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1534,7 +1534,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
         </TableRow>
 
@@ -1549,7 +1549,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1559,7 +1559,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1569,7 +1569,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1579,7 +1579,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1589,7 +1589,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1599,7 +1599,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1609,7 +1609,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1619,7 +1619,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1629,7 +1629,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
         </TableRow>
 
@@ -1644,7 +1644,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1654,7 +1654,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1664,7 +1664,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1674,7 +1674,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1684,7 +1684,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1694,7 +1694,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1704,7 +1704,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1714,7 +1714,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
 
             <EditText
@@ -1724,7 +1724,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="#000000"
                 android:textSize="30sp" />
         </TableRow>
     </TableLayout>
@@ -1736,7 +1736,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="7dp"
         android:text="Lives:"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -1778,7 +1778,7 @@
         android:layout_marginStart="200dp"
         android:layout_marginBottom="96dp"
         android:text="Left For You:"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -1790,7 +1790,7 @@
         android:layout_marginStart="200dp"
         android:layout_marginBottom="28dp"
         android:text="Left For Him:"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -1802,7 +1802,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="328dp"
         android:layout_marginBottom="28dp"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -1814,7 +1814,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="324dp"
         android:layout_marginBottom="96dp"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -1846,7 +1846,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="30dp"
         android:text="You"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="#000000"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/yourIMG"
@@ -1858,7 +1858,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="92dp"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="#000000"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/yourIMG"
