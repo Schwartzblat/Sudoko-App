@@ -39,7 +39,8 @@ import java.util.Objects;
 public class Update extends AppCompatActivity {
     ImageView imageView;
     String oldUsername, oldPassword, inUsername, oldPhone, oldEmail;
-    int status=1;
+    int status=1 , check=0;
+    int navi=0;
     User oldUser;
     byte [] image = null;
     FirebaseAuth mAuth;
@@ -101,6 +102,8 @@ public class Update extends AppCompatActivity {
     }
 
     public void update(View v){
+        status =1;
+        check=0;
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser authUser= mAuth.getCurrentUser();
         // get input:
@@ -114,6 +117,7 @@ public class Update extends AppCompatActivity {
 
         //check username
         if(!inUsername.equals("")) {
+            check=1;
             if (inUsername.length() < 4) {
                 status = 0;
                 alert("please enter valid username");
@@ -157,6 +161,7 @@ public class Update extends AppCompatActivity {
 
         //check passwords:
         if(!inPass.equals("")){
+            check =1;
             if(oldPass.equals(oldPassword)) {
                 if (inPass.equals(inPassc) && inPass.length() > 7) {
                     if(authUser!=null) {
@@ -176,8 +181,14 @@ public class Update extends AppCompatActivity {
                 status=0;
             }
         }
+
+        if(oldPass.equals("")){
+            alert("please enter your old password");
+            status=0;
+        }
             // phone check:
         if(!inPhone.equals("")){
+            check =1;
             if(inPhone.length()==10){
                 oldUser.setPhone(inPhone);
             }
@@ -188,6 +199,7 @@ public class Update extends AppCompatActivity {
         }
         // email check:
         if(!inEmail.equals("")){
+            check =1;
             if(inEmail.contains("@")){
                 if(authUser!=null) {
                     authUser.updateEmail(inEmail);
@@ -201,7 +213,7 @@ public class Update extends AppCompatActivity {
         }
 
 
-        if(status==1) {
+        if(status==1 && check==1) {
             updateInfo(oldUser);
         }
 
@@ -310,17 +322,17 @@ public class Update extends AppCompatActivity {
             public void onDrawerClosed(@NonNull View drawerView) {
                 findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
                 findViewById(R.id.frame).setTranslationZ(-10);
-                status = 1;
+                navi = 1;
             }
 
             @Override
             public void onDrawerStateChanged(int newState) {
-                if(status==0) {
+                if(navi==0) {
                     findViewById(R.id.closeNav).setVisibility(View.VISIBLE);
                     findViewById(R.id.closeNav).setTranslationZ(10);
                     findViewById(R.id.frame).setTranslationZ(10);
                 }
-                status=0;
+                navi=0;
             }
         });
 

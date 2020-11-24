@@ -8,10 +8,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -62,7 +67,6 @@ public class logIn extends AppCompatActivity {
     }
 
     public void log(View v){
-        /*
         //get values
         username = ((TextView)findViewById(R.id.username)).getText().toString();
         password = ((TextView)findViewById(R.id.password)).getText().toString();
@@ -99,12 +103,7 @@ public class logIn extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "invalid name or password", Toast.LENGTH_LONG).show();
                 ((TextView) findViewById(R.id.password)).setText("");
             }
-        }*/
-        username = "alon";
-        password = "12345678";
-        phone = "0507336650";
-        email = "alon.ponch@gmail.co";
-        StatusIsOk();
+        }
     }
 
     public void StatusIsOk(){
