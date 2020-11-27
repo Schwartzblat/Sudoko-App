@@ -1809,15 +1809,4 @@
       app:layout_constraintTop_toTopOf="parent"
       app:srcCompat="@drawable/ic_baseline_menu_24" />
 
-  <Button
-      android:id="@+id/closeNav"
-      android:layout_width="130dp"
-      android:layout_height="match_parent"
-      android:alpha="0"
-      android:onClick="closeNav"
-      android:text="Button"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

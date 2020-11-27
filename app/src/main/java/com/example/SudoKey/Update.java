@@ -301,13 +301,8 @@ public class Update extends AppCompatActivity {
         ((DrawerLayout)findViewById(R.id.frame)).openDrawer(GravityCompat.START);
     }
 
-    public void closeNav(View v){
-        findViewById(R.id.frame).setTranslationZ(-10);
-        ((DrawerLayout)findViewById(R.id.frame)).closeDrawer(GravityCompat.START);
-    }
 
     public void setupNavi(){
-        findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
         findViewById(R.id.frame).setTranslationZ(-10);
         ((DrawerLayout)findViewById(R.id.frame)).addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
@@ -320,19 +315,16 @@ public class Update extends AppCompatActivity {
 
             @Override
             public void onDrawerClosed(@NonNull View drawerView) {
-                findViewById(R.id.closeNav).setVisibility(View.INVISIBLE);
                 findViewById(R.id.frame).setTranslationZ(-10);
-                navi = 1;
+                status = 1;
             }
 
             @Override
             public void onDrawerStateChanged(int newState) {
-                if(navi==0) {
-                    findViewById(R.id.closeNav).setVisibility(View.VISIBLE);
-                    findViewById(R.id.closeNav).setTranslationZ(10);
+                if(status==0) {
                     findViewById(R.id.frame).setTranslationZ(10);
                 }
-                navi=0;
+                status=0;
             }
         });
 
