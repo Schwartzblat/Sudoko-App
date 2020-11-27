@@ -10,8 +10,8 @@
         android:id="@+id/check2"
         android:layout_width="124dp"
         android:layout_height="62dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginBottom="136dp"
         android:onClick="check"
         android:text="Check Move"
         android:textAllCaps="false"
@@ -21,12 +21,13 @@
 
     <TableLayout
         android:id="@+id/sudukoTable"
-        android:layout_width="313dp"
-        android:layout_height="473dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="338dp"
+        android:layout_height="523dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tableLayout3"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout3"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout3"
+        app:layout_constraintTop_toTopOf="@+id/tableLayout3">
 
         <TableRow
             android:layout_width="match_parent"
@@ -35,7 +36,7 @@
             <TextView
                 android:id="@+id/id0"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -44,7 +45,7 @@
             <TextView
                 android:id="@+id/id1"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -53,7 +54,7 @@
             <TextView
                 android:id="@+id/id2"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -62,7 +63,7 @@
             <TextView
                 android:id="@+id/id3"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -71,7 +72,7 @@
             <TextView
                 android:id="@+id/id4"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -80,7 +81,7 @@
             <TextView
                 android:id="@+id/id5"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -89,7 +90,7 @@
             <TextView
                 android:id="@+id/id6"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -98,7 +99,7 @@
             <TextView
                 android:id="@+id/id7"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -107,7 +108,7 @@
             <TextView
                 android:id="@+id/id8"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -122,7 +123,7 @@
             <TextView
                 android:id="@+id/id9"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -131,7 +132,7 @@
             <TextView
                 android:id="@+id/id10"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -140,7 +141,7 @@
             <TextView
                 android:id="@+id/id11"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -149,7 +150,7 @@
             <TextView
                 android:id="@+id/id12"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -158,7 +159,7 @@
             <TextView
                 android:id="@+id/id13"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -167,7 +168,7 @@
             <TextView
                 android:id="@+id/id14"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -176,7 +177,7 @@
             <TextView
                 android:id="@+id/id15"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -185,7 +186,7 @@
             <TextView
                 android:id="@+id/id16"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -194,7 +195,7 @@
             <TextView
                 android:id="@+id/id17"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -208,7 +209,7 @@
             <TextView
                 android:id="@+id/id18"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -217,7 +218,7 @@
             <TextView
                 android:id="@+id/id19"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -226,7 +227,7 @@
             <TextView
                 android:id="@+id/id20"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -235,7 +236,7 @@
             <TextView
                 android:id="@+id/id21"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -244,7 +245,7 @@
             <TextView
                 android:id="@+id/id22"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -253,7 +254,7 @@
             <TextView
                 android:id="@+id/id23"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -262,7 +263,7 @@
             <TextView
                 android:id="@+id/id24"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -271,7 +272,7 @@
             <TextView
                 android:id="@+id/id25"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -280,7 +281,7 @@
             <TextView
                 android:id="@+id/id26"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -294,7 +295,7 @@
             <TextView
                 android:id="@+id/id27"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -303,7 +304,7 @@
             <TextView
                 android:id="@+id/id28"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -312,7 +313,7 @@
             <TextView
                 android:id="@+id/id29"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -321,7 +322,7 @@
             <TextView
                 android:id="@+id/id30"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -330,7 +331,7 @@
             <TextView
                 android:id="@+id/id31"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -339,7 +340,7 @@
             <TextView
                 android:id="@+id/id32"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -348,7 +349,7 @@
             <TextView
                 android:id="@+id/id33"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -357,7 +358,7 @@
             <TextView
                 android:id="@+id/id34"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -366,7 +367,7 @@
             <TextView
                 android:id="@+id/id35"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -381,7 +382,7 @@
             <TextView
                 android:id="@+id/id36"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -390,7 +391,7 @@
             <TextView
                 android:id="@+id/id37"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -399,7 +400,7 @@
             <TextView
                 android:id="@+id/id38"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -408,7 +409,7 @@
             <TextView
                 android:id="@+id/id39"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -417,7 +418,7 @@
             <TextView
                 android:id="@+id/id41"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -426,7 +427,7 @@
             <TextView
                 android:id="@+id/id42"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -435,7 +436,7 @@
             <TextView
                 android:id="@+id/id43"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -444,7 +445,7 @@
             <TextView
                 android:id="@+id/id44"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -453,7 +454,7 @@
             <TextView
                 android:id="@+id/id45"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -467,7 +468,7 @@
             <TextView
                 android:id="@+id/id46"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -476,7 +477,7 @@
             <TextView
                 android:id="@+id/id47"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -485,7 +486,7 @@
             <TextView
                 android:id="@+id/id48"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -494,7 +495,7 @@
             <TextView
                 android:id="@+id/id49"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -503,7 +504,7 @@
             <TextView
                 android:id="@+id/id50"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -512,7 +513,7 @@
             <TextView
                 android:id="@+id/id51"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -521,7 +522,7 @@
             <TextView
                 android:id="@+id/id52"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -530,7 +531,7 @@
             <TextView
                 android:id="@+id/id53"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -539,7 +540,7 @@
             <TextView
                 android:id="@+id/id54"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -553,7 +554,7 @@
             <TextView
                 android:id="@+id/id55"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -562,7 +563,7 @@
             <TextView
                 android:id="@+id/id56"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -571,7 +572,7 @@
             <TextView
                 android:id="@+id/id57"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -580,7 +581,7 @@
             <TextView
                 android:id="@+id/id58"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -589,7 +590,7 @@
             <TextView
                 android:id="@+id/id59"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -598,7 +599,7 @@
             <TextView
                 android:id="@+id/id60"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -607,7 +608,7 @@
             <TextView
                 android:id="@+id/id61"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -616,7 +617,7 @@
             <TextView
                 android:id="@+id/id62"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -625,7 +626,7 @@
             <TextView
                 android:id="@+id/id63"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -640,7 +641,7 @@
             <TextView
                 android:id="@+id/id64"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -649,7 +650,7 @@
             <TextView
                 android:id="@+id/id65"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -658,7 +659,7 @@
             <TextView
                 android:id="@+id/id66"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -667,7 +668,7 @@
             <TextView
                 android:id="@+id/id67"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -676,7 +677,7 @@
             <TextView
                 android:id="@+id/id68"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -685,7 +686,7 @@
             <TextView
                 android:id="@+id/id69"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -694,7 +695,7 @@
             <TextView
                 android:id="@+id/id70"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -703,7 +704,7 @@
             <TextView
                 android:id="@+id/id71"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -712,7 +713,7 @@
             <TextView
                 android:id="@+id/id72"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -726,7 +727,7 @@
             <TextView
                 android:id="@+id/id73"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -735,7 +736,7 @@
             <TextView
                 android:id="@+id/id74"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -744,7 +745,7 @@
             <TextView
                 android:id="@+id/id75"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -753,7 +754,7 @@
             <TextView
                 android:id="@+id/id76"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -762,7 +763,7 @@
             <TextView
                 android:id="@+id/id77"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -771,7 +772,7 @@
             <TextView
                 android:id="@+id/id78"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -780,7 +781,7 @@
             <TextView
                 android:id="@+id/id79"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -789,7 +790,7 @@
             <TextView
                 android:id="@+id/id80"
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -797,8 +798,8 @@
 
             <TextView
                 android:id="@+id/id81"
-                android:layout_width="38dp"
-                android:layout_height="wrap_content"
+                android:layout_width="35dp"
+                android:layout_height="55dp"
                 android:text="@string/_0"
                 android:textColor="#000000"
                 android:textSize="40sp"
@@ -807,58 +808,65 @@
     </TableLayout>
 
     <View
-        android:id="@+id/col4"
+        android:id="@+id/col2"
         android:layout_width="3dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="225dp"
+        android:layout_height="520dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="200dp"
+        android:background="#000000"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/tableLayout3"
+        app:layout_constraintEnd_toEndOf="@id/tableLayout3"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout3"
+        app:layout_constraintTop_toTopOf="@+id/tableLayout3"
+        app:layout_constraintVertical_bias="1.0"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="250dp"
         android:background="#000000"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/sudukoTable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/col4"
+        android:layout_width="3dp"
+        android:layout_height="520dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="105dp"
+        android:background="#000000"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/tableLayout3"
+        app:layout_constraintEnd_toEndOf="@id/tableLayout3"
+        app:layout_constraintStart_toStartOf="@id/tableLayout3"
+        app:layout_constraintTop_toTopOf="@+id/tableLayout3"
+        app:layout_constraintVertical_bias="1.0"
         tools:visibility="visible" />
 
     <View
         android:id="@+id/row4"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="185dp"
-        android:layout_marginEnd="55dp"
-        android:background="#000000"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
-
-    <View
-        android:id="@+id/col5"
-        android:layout_width="3dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="245dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="225dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="430dp"
         android:background="#000000"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
-
-    <View
-        android:id="@+id/row5"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="50dp"
-        android:background="#000000"
-        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
@@ -866,15 +874,17 @@
     <TableLayout
         android:id="@+id/tableLayout3"
         android:layout_width="320dp"
-        android:layout_height="484dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="23dp"
+        android:layout_height="520dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="220dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="80dp">
+            android:layout_height="match_parent">
 
             <EditText
                 android:id="@+id/place1"
@@ -965,7 +975,6 @@
                 android:maxLength="1"
                 android:textColor="#000000"
                 android:textSize="30sp" />
-
         </TableRow>
 
         <TableRow
@@ -1635,7 +1644,7 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <EditText
                 android:id="@+id/place73"
@@ -1843,8 +1852,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:text="You"
         android:textColor="#000000"
         android:textSize="22sp"
@@ -1857,7 +1866,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="76dp"
         android:textColor="#000000"
         android:textSize="22sp"
         android:textStyle="bold"

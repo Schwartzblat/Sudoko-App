@@ -139,13 +139,18 @@ public class waitingRoom extends AppCompatActivity {
 
     }
 
-    public void onStop() {
+    /*public void onStop() {
         super.onStop();
         if(close == 0) {
             FirebaseDatabase.getInstance().getReference("Rooms").child(code).removeValue();
         }
+        startActivity(new Intent(this, sudokuRoom.class));
+    }*/
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        FirebaseDatabase.getInstance().getReference("Rooms").child(code).removeValue();
     }
-
 
 
 }

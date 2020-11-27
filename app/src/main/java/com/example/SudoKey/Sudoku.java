@@ -31,7 +31,6 @@ public class Sudoku {
            while (mLine != null) {
                sb.append(mLine); // process line
                mLine = reader.readLine();
-
            }
             reader.close();
        }

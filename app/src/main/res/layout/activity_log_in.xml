@@ -49,11 +49,9 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="208dp"
         android:layout_marginEnd="18dp"
-        android:layout_marginBottom="235dp"
         android:text="Password: "
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintEnd_toStartOf="@+id/password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,9 +61,9 @@
         android:layout_width="235dp"
         android:layout_height="45dp"
         android:layout_marginStart="143dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="225dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/border"
         android:ems="10"
         android:hint="Enter password"
@@ -96,7 +94,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.647"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.605" />
@@ -105,7 +103,6 @@
         android:id="@+id/button7"
         android:layout_width="130dp"
         android:layout_height="64dp"
-        android:layout_marginTop="225dp"
         android:layout_marginEnd="54dp"
         android:layout_marginBottom="312dp"
         android:backgroundTint="#3E3E3E"
@@ -117,8 +114,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintTop_toTopOf="@+id/button4"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
