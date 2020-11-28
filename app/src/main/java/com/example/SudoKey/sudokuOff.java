@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -27,17 +28,20 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.FileOutputStream;
 
 public class sudokuOff extends AppCompatActivity{
-    String diff = "easy";
+    String diff = "easy", username;
     Context context;
-    int remain=0, status=0;
+    int remain=0, status=0, highscore;
     int[][] board;
     int [][] solved;
-    long seconds, minutes;
-    long elapsedTime;
+    long seconds, minutes, elapsedTime;
     Chronometer timer;
     Boolean resume = false;
     Sudoku sudoku;
@@ -65,6 +69,24 @@ public class sudokuOff extends AppCompatActivity{
         });
         timer.start();
 
+        SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
+        username = data.getString("username", null);
+        FirebaseDatabase.getInstance().getReference("Users").child("user").child(username).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                try {
+                    highscore = Integer.parseInt(String.valueOf(snapshot.child("highscore")));
+                }
+                catch(Exception e){
+                    highscore=0;
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         context= getApplicationContext();
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -149,6 +171,10 @@ public class sudokuOff extends AppCompatActivity{
 
     public void gameOver(){
         resetTimer();
+        if(minutes*60+seconds>highscore){
+            FirebaseDatabase.getInstance().getReference("Users").child("user").child(username).child("highscore").setValue(String.valueOf(minutes*60+seconds));
+            highscore = (int) (minutes*60+seconds);
+        }
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
         builder.setMessage("well done you won in "+minutes+":"+seconds+"!").
                 setCancelable(true)
