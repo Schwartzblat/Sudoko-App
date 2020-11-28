@@ -8,11 +8,13 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -31,9 +33,13 @@ import java.io.FileOutputStream;
 public class sudokuOff extends AppCompatActivity{
     String diff = "easy";
     Context context;
-    int reamin=0, status=0;
+    int remain=0, status=0;
     int[][] board;
     int [][] solved;
+    long seconds, minutes;
+    long elapsedTime;
+    Chronometer timer;
+    Boolean resume = false;
     Sudoku sudoku;
     int [] tableArray = {R.id.id0, R.id.id1, R.id.id2, R.id.id3, R.id.id4, R.id.id5, R.id.id6, R.id.id7, R.id.id8, R.id.id9, R.id.id10, R.id.id11, R.id.id12, R.id.id13, R.id.id14, R.id.id15, R.id.id16, R.id.id17, R.id.id18, R.id.id19, R.id.id20, R.id.id21, R.id.id22, R.id.id23, R.id.id24, R.id.id25, R.id.id26, R.id.id27, R.id.id28, R.id.id29, R.id.id30, R.id.id31, R.id.id32, R.id.id33, R.id.id34, R.id.id35, R.id.id36, R.id.id37, R.id.id38, R.id.id39, R.id.id41, R.id.id42, R.id.id43, R.id.id44, R.id.id45, R.id.id46, R.id.id47, R.id.id48, R.id.id49, R.id.id50, R.id.id51, R.id.id52, R.id.id53, R.id.id54, R.id.id55, R.id.id56, R.id.id57, R.id.id58, R.id.id59, R.id.id60, R.id.id61, R.id.id62, R.id.id63, R.id.id64, R.id.id65, R.id.id66, R.id.id67, R.id.id68, R.id.id69, R.id.id70, R.id.id71, R.id.id72, R.id.id73, R.id.id74, R.id.id75, R.id.id76, R.id.id77, R.id.id78, R.id.id79, R.id.id80, R.id.id81};
     int [] textTable = {R.id.place1, R.id.place2, R.id.place3, R.id.place4, R.id.place5, R.id.place6, R.id.place7, R.id.place8, R.id.place9, R.id.place10, R.id.place11, R.id.place12, R.id.place13, R.id.place14, R.id.place15, R.id.place16, R.id.place17, R.id.place18, R.id.place19, R.id.place20, R.id.place21, R.id.place22, R.id.place23, R.id.place24, R.id.place25, R.id.place26, R.id.place27, R.id.place28, R.id.place29, R.id.place30, R.id.place31, R.id.place32, R.id.place33, R.id.place34, R.id.place35, R.id.place36, R.id.place37, R.id.place38, R.id.place39, R.id.place40, R.id.place41, R.id.place42, R.id.place43, R.id.place44, R.id.place45, R.id.place46, R.id.place47, R.id.place48, R.id.place49, R.id.place50, R.id.place51, R.id.place52, R.id.place53, R.id.place54, R.id.place55, R.id.place56, R.id.place57, R.id.place58, R.id.place59, R.id.place60, R.id.place61, R.id.place62, R.id.place63, R.id.place64, R.id.place65, R.id.place66, R.id.place67, R.id.place68, R.id.place69, R.id.place70, R.id.place71, R.id.place72, R.id.place73, R.id.place74, R.id.place75, R.id.place76, R.id.place77, R.id.place78, R.id.place79, R.id.place80, R.id.place81};
@@ -42,6 +48,23 @@ public class sudokuOff extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sudoku_off);
+        timer = findViewById(R.id.timer);
+        timer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+            public void onChronometerTick(Chronometer arg0) {
+                if (!resume) {
+                    minutes = ((SystemClock.elapsedRealtime() - timer.getBase())/1000) / 60;
+                    seconds = ((SystemClock.elapsedRealtime() - timer.getBase())/1000) % 60;
+                    elapsedTime = SystemClock.elapsedRealtime();
+                }
+                else {
+                    minutes = ((elapsedTime - timer.getBase())/1000) / 60;
+                    seconds = ((elapsedTime - timer.getBase())/1000) % 60;
+                    elapsedTime = elapsedTime + 1000;
+                }
+            }
+        });
+        timer.start();
+
         context= getApplicationContext();
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -80,10 +103,11 @@ public class sudokuOff extends AppCompatActivity{
     }
 
     public void setBoard(){
+        remain=0;
         for(int i=0;i<9;i++){
             for(int j=0;j<9;j++){
                 if(board[i][j] == 0){
-                    reamin++;
+                    remain++;
                     findViewById(tableArray[i*9+j]).setVisibility(View.INVISIBLE);
                     findViewById(textTable[i*9+j]).setVisibility(View.VISIBLE);
                 }
@@ -91,8 +115,6 @@ public class sudokuOff extends AppCompatActivity{
                     ((TextView)findViewById(tableArray[i*9+j])).setText(String.valueOf(board[i][j]));
                     findViewById(textTable[i*9+j]).setVisibility(View.INVISIBLE);
                     findViewById(tableArray[i*9+j]).setVisibility(View.VISIBLE);
-
-
                 }
             }
         }
@@ -109,14 +131,14 @@ public class sudokuOff extends AppCompatActivity{
                     ((TextView)findViewById(textTable[i])).setText("");
                 }
                 else {
-                    reamin--;
+                    remain--;
                     ((TextView) findViewById(tableArray[i])).setText(input);
                     findViewById(tableArray[i]).setVisibility(View.VISIBLE);
                     findViewById(textTable[i]).setVisibility(View.INVISIBLE);
                 }
             }
         }
-        if(reamin==0){
+        if(remain<1){
             gameOver();
         }
     }
@@ -126,8 +148,9 @@ public class sudokuOff extends AppCompatActivity{
     }
 
     public void gameOver(){
+        resetTimer();
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
-        builder.setMessage("well done you won!").
+        builder.setMessage("well done you won in "+minutes+":"+seconds+"!").
                 setCancelable(true)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -288,6 +311,27 @@ public class sudokuOff extends AppCompatActivity{
         dialog.show();
         dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
         dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+    }
+
+    public void startTimer(){
+        if (!resume) {
+            timer.setBase(SystemClock.elapsedRealtime());
+            timer.start();
+        } else {
+            timer.start();
+        }
+    }
+
+    public void stopTimer(){
+        timer.stop();
+        timer.setText("");
+        resume = true;
+    }
+
+    public void resetTimer(){
+        timer.stop();
+        timer.setText("00:00");
+        resume = false;
     }
 
 }
