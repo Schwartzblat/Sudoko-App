@@ -154,6 +154,7 @@ public class sudokuOff extends AppCompatActivity{
                 }
                 else {
                     remain--;
+                    ((EditText)findViewById(textTable[i])).setText("");
                     ((TextView) findViewById(tableArray[i])).setText(input);
                     findViewById(tableArray[i]).setVisibility(View.VISIBLE);
                     findViewById(textTable[i]).setVisibility(View.INVISIBLE);
