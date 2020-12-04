@@ -148,6 +148,7 @@ public class signUp extends AppCompatActivity {
                             editor.putString("password", password);
                             editor.putString("phone", phone);
                             editor.putString("email", email);
+                            editor.putInt("highscore", 0);
                             editor.apply();
                             Intent i = new Intent(getApplicationContext(), sudokuRoom.class);
                             startActivity(i);

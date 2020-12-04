@@ -105,14 +105,31 @@ public class logIn extends AppCompatActivity {
             }
         }
     }
-
+    int highscore;
     public void StatusIsOk(){
+        FirebaseDatabase.getInstance().getReference("Users").child("user").child(username).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                try {
+                    highscore = Integer.parseInt(String.valueOf(snapshot.child("highscore")));
+                }
+                catch(Exception e){
+                    highscore=0;
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         Intent i = new Intent(this, sudokuRoom.class);
         SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE ).edit();
         editor.putString("username", username);
         editor.putString("password", password);
         editor.putString("phone", phone);
         editor.putString("email", email);
+        editor.putInt("highscore", highscore);
         editor.apply();
         startActivity(i);
         finish();

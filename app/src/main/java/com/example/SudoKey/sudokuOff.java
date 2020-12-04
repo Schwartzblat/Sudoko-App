@@ -28,10 +28,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.io.FileOutputStream;
 
@@ -71,22 +68,7 @@ public class sudokuOff extends AppCompatActivity{
 
         SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
         username = data.getString("username", null);
-        FirebaseDatabase.getInstance().getReference("Users").child("user").child(username).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                try {
-                    highscore = Integer.parseInt(String.valueOf(snapshot.child("highscore")));
-                }
-                catch(Exception e){
-                    highscore=0;
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        highscore = data.getInt("highscore", 0);
         context= getApplicationContext();
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
