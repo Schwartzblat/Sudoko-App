@@ -16,7 +16,7 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/title"
         android:layout_width="198dp"
         android:layout_height="80dp"
         android:fontFamily="sans-serif-black"

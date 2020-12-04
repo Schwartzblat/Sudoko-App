@@ -112,6 +112,8 @@ public class sudokuOff extends AppCompatActivity{
                 for (int i =0;i<81;i++){
                     ((EditText)findViewById(textTable[i])).setText("");
                 }
+                resetTimer();
+                startTimer();
             }
 
             @Override
