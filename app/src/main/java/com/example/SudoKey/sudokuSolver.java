@@ -236,6 +236,10 @@ public class sudokuSolver extends AppCompatActivity {
         ((DrawerLayout)findViewById(R.id.frame)).openDrawer(GravityCompat.START);
     }
 
+    public void launchStatistics(){
+        Intent i = new Intent(this, statistics.class);
+        startActivity(i);
+    }
 
     public void setupNavi(){
         findViewById(R.id.frame).setTranslationZ(-10);
@@ -281,6 +285,10 @@ public class sudokuSolver extends AppCompatActivity {
 
                     case "Update Info":
                         launchUpdate();
+                        break;
+
+                    case "Statistics":
+                        launchStatistics();
                         break;
 
                     case "Log Out":

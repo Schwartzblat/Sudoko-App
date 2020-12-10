@@ -156,9 +156,12 @@ public class sudokuOff extends AppCompatActivity{
 
     public void gameOver(){
         resetTimer();
-        if(minutes*60+seconds>highscore){
+        if(minutes*60+seconds<highscore){
             FirebaseDatabase.getInstance().getReference("Users").child("user").child(username).child("highscore").setValue(String.valueOf(minutes*60+seconds));
             highscore = (int) (minutes*60+seconds);
+            SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE ).edit();
+            editor.putInt("highscore", highscore);
+            editor.apply();
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
         builder.setMessage("well done you won in "+minutes+":"+seconds+"!").
@@ -219,6 +222,10 @@ public class sudokuOff extends AppCompatActivity{
         ((DrawerLayout)findViewById(R.id.frame)).openDrawer(GravityCompat.START);
     }
 
+    public void launchStatistics(){
+        Intent i = new Intent(this, statistics.class);
+        startActivity(i);
+    }
 
     public void setupNavi(){
         findViewById(R.id.frame).setTranslationZ(-10);
@@ -264,6 +271,10 @@ public class sudokuOff extends AppCompatActivity{
 
                     case "Update Info":
                         launchUpdate();
+                        break;
+
+                    case "Statistics":
+                        launchStatistics();
                         break;
 
                     case "Log Out":

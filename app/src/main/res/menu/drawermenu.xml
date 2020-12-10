@@ -23,6 +23,11 @@
         android:icon="@drawable/profile_user"
         />
     <item
+        android:id="@+id/stats"
+        android:title="Statistics"
+        android:icon="@drawable/stats"
+        />
+    <item
         android:id="@+id/logout"
         android:icon="@drawable/ic_baseline_power_settings_new_24"
         android:title="Log Out" />

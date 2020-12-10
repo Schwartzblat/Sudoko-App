@@ -362,6 +362,11 @@ public class TicTacToePC extends AppCompatActivity{
         }
     }
 
+    public void launchStatistics(){
+        Intent i = new Intent(this, statistics.class);
+        startActivity(i);
+    }
+
     public void launchSudokuSolver(){
         Intent i = new Intent(this, sudokuSolver.class);
         startActivity(i);
@@ -446,6 +451,9 @@ public class TicTacToePC extends AppCompatActivity{
 
                     case "Update Info":
                         launchUpdate();
+                        break;
+                    case "Statistics":
+                        launchStatistics();
                         break;
 
                     case "Log Out":

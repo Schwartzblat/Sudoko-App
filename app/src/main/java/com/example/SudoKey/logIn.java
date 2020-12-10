@@ -111,9 +111,10 @@ public class logIn extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 try {
-                    highscore = Integer.parseInt(String.valueOf(snapshot.child("highscore")));
+                    highscore = Integer.parseInt(String.valueOf(snapshot.child("highscore").getValue()));
                 }
                 catch(Exception e){
+                    e.printStackTrace();
                     highscore=0;
                 }
             }

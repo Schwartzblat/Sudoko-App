@@ -301,6 +301,10 @@ public class Update extends AppCompatActivity {
         ((DrawerLayout)findViewById(R.id.frame)).openDrawer(GravityCompat.START);
     }
 
+    public void launchStatistics(){
+        Intent i = new Intent(this, statistics.class);
+        startActivity(i);
+    }
 
     public void setupNavi(){
         findViewById(R.id.frame).setTranslationZ(-10);
@@ -346,6 +350,10 @@ public class Update extends AppCompatActivity {
 
                     case "Tic Tac Toe vs PC":
                         launchTicTacToePC();
+                        break;
+
+                    case "Statistics":
+                        launchStatistics();
                         break;
 
                     case "Log Out":
