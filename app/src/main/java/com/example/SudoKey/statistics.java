@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class statistics extends AppCompatActivity {
     String username;
-    int highscore;
+    int highscore, onlineWins;
 
 
     @Override
@@ -18,6 +18,9 @@ public class statistics extends AppCompatActivity {
         SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
         username = data.getString("username", null);
         highscore = data.getInt("highscore", 0);
+        onlineWins = data.getInt("onlineWins",0);
         ((TextView)findViewById(R.id.highscore)).setText((String)(highscore+" Seconds"));
+        ((TextView)findViewById(R.id.wins)).setText((String)(onlineWins+" Wins"));
+
     }
 }

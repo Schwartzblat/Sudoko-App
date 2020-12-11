@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 public class logIn extends AppCompatActivity {
     DataSnapshot data = null;
     String username ="", password="", email, phone;
-    int status = 0;
+    int status = 0, onlineWins;
     FirebaseAuth mAuth;
 
     @SuppressLint("ClickableViewAccessibility")
@@ -117,6 +117,12 @@ public class logIn extends AppCompatActivity {
                     e.printStackTrace();
                     highscore=0;
                 }
+                try{
+                    onlineWins= Integer.parseInt(String.valueOf(snapshot.child("onlineWins").getValue()));
+                }
+                catch(Exception e){
+                    onlineWins=0;
+                }
             }
 
             @Override
@@ -131,6 +137,7 @@ public class logIn extends AppCompatActivity {
         editor.putString("phone", phone);
         editor.putString("email", email);
         editor.putInt("highscore", highscore);
+        editor.putInt("onlineWins", onlineWins);
         editor.apply();
         startActivity(i);
         finish();
