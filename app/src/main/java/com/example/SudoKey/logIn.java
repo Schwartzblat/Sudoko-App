@@ -3,6 +3,7 @@ package com.example.SudoKey;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,11 +32,14 @@ public class logIn extends AppCompatActivity {
     int status = 0, onlineWins;
     FirebaseAuth mAuth;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        //int [][]x = {{5},{2,2,3,2},{4,1,2,2},{2,1,2,1,2},{4,1,2,2,3},{1,2,1,3},{2,3,1,4},{5,2,4},{5,1,3},{1,4,2,3},{2,4,1,4},{2,6,5},{3,11},{4,3,7},{2,2,2,3},{1,1,2,2},{5,3,1},{2,2,2,1},{5,3,2},{3,1}};
+        //int [][]y = {{2,4},{3,2,3},{1,1,3,1,1},{2,1,2,4,4},{3,8,3},{1,1,2,2},{2,4,1},{1,9,2,1,1},{2,3,7,1,2},{5,4},{4,3,2},{3,3,3},{2,10},{1,4,2},{2,2,3},{1,5,3},{3,4,4},{2,9},{1,7},{5}};
         mAuth = FirebaseAuth.getInstance();
         DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child("user");
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
