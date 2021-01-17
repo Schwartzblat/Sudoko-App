@@ -17,6 +17,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,12 +27,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.Base64;
 
 public class logIn extends AppCompatActivity {
     DataSnapshot data = null;
     String username ="", password="", email, phone;
     int status = 0, onlineWins;
     FirebaseAuth mAuth;
+    byte[] image;
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @SuppressLint("ClickableViewAccessibility")
@@ -81,14 +89,34 @@ public class logIn extends AppCompatActivity {
                 xuser = user.getValue(User.class);
                 if (xuser != null) {
                     if (username.equals(xuser.username) && password.equals(xuser.password)) {
+                        status=1;
                         phone = xuser.phone;
                         email = xuser.email;
                         mAuth.signInWithEmailAndPassword(email, password)
                                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                                    @RequiresApi(api = Build.VERSION_CODES.O)
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
-                                        if (task.isSuccessful()) {
-                                            StatusIsOk();
+                                        if (task.isSuccessful()){
+                                            try{
+                                                StorageReference islandRef = FirebaseStorage.getInstance().getReference(username);
+                                                final long ONE_MEGABYTE = 1024 * 1024;
+
+                                                islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                                                    @Override
+                                                    public void onSuccess(byte[] bytes) {
+                                                        image = bytes.clone();
+                                                        StatusIsOk();
+
+                                                    }
+                                                }).addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception exception) {
+                                                    }
+                                                });
+                                            }
+                                            catch (Exception ignored){
+                                            }
                                         } else {
                                             // If sign in fails, display a message to the user.
                                             Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
@@ -98,9 +126,6 @@ public class logIn extends AppCompatActivity {
                                         // ...
                                     }
                                 });
-
-                        StatusIsOk();
-                        status = 1;
                     }
                 }
             }
@@ -111,6 +136,7 @@ public class logIn extends AppCompatActivity {
         }
     }
     int highscore;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void StatusIsOk(){
         FirebaseDatabase.getInstance().getReference("Users").child("user").child(username).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -135,6 +161,14 @@ public class logIn extends AppCompatActivity {
 
             }
         });
+
+        String encodedImage;
+        try{
+            encodedImage = Base64.getEncoder().encodeToString(image);
+        }
+        catch (Exception ignored){
+            encodedImage = null;
+        }
         Intent i = new Intent(this, sudokuRoom.class);
         SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE ).edit();
         editor.putString("username", username);
@@ -143,6 +177,7 @@ public class logIn extends AppCompatActivity {
         editor.putString("email", email);
         editor.putInt("highscore", highscore);
         editor.putInt("onlineWins", onlineWins);
+        editor.putString("image_data",encodedImage);
         editor.apply();
         startActivity(i);
         finish();

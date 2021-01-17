@@ -29,6 +29,8 @@ public class Nonogram {
             + "R AN AAN EI H G", "E CB BAB AAA AAA AC BB ACC ACCA AGB AIA AJ AJ "
             + "ACE AH BAF CAG DAG FAH FJ GJ ADK ABK BL CM"};
     public String [][] solution =new String[20][20];
+
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     public Nonogram(int [][] hr, int [][] vr){
         String [] puzzleData = new String[2];

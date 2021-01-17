@@ -5,13 +5,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -24,6 +28,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Base64;
 import java.util.Objects;
 import java.util.Random;
 
@@ -31,14 +36,22 @@ public class sudokuRoom extends AppCompatActivity{
     String username,code;
     Context context;
     int status = 0;
-    private DatabaseReference myRef;
+    DatabaseReference myRef;
+    View header;
+    byte [] image;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sudoku_room);
         SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
         username = data.getString("username", null);
+        String previouslyEncodedImage = data.getString("image_data", null);
+        if(previouslyEncodedImage!=null){
+            image = Base64.getDecoder().decode(previouslyEncodedImage);
+        }
         context = getApplicationContext();
+        header = ((NavigationView)findViewById(R.id.navi)).getHeaderView(0);
         setupNavi();
     }
 
@@ -108,6 +121,11 @@ public class sudokuRoom extends AppCompatActivity{
 
 
     public void setupNavi(){
+        ((TextView)header.findViewById(R.id.navi_user)).setText(username);
+        if(image!=null) {
+            ((ImageView) header.findViewById(R.id.profile)).setImageBitmap(BitmapFactory.decodeByteArray(image, 0, image.length));
+        }
+
         findViewById(R.id.frame).setTranslationZ(-10);
         ((DrawerLayout)findViewById(R.id.frame)).addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override

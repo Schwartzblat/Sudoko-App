@@ -49,8 +49,8 @@ public class Update extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
-        SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
         setupNavi();
+        SharedPreferences data = getSharedPreferences("data",MODE_PRIVATE );
         oldUsername = data.getString("username", null);
         oldPassword = data.getString("password", null);
         oldPhone = data.getString("phone", null);
