@@ -5,10 +5,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -28,6 +30,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.ByteArrayOutputStream;
 import java.util.Base64;
 import java.util.Objects;
 import java.util.Random;
@@ -53,6 +56,7 @@ public class sudokuRoom extends AppCompatActivity{
         context = getApplicationContext();
         header = ((NavigationView)findViewById(R.id.navi)).getHeaderView(0);
         setupNavi();
+        setProfileClick();
     }
 
     public void createRoom(View v){
@@ -269,5 +273,36 @@ public class sudokuRoom extends AppCompatActivity{
         dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
         dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
     }
+    public void setProfileClick(){
+        header.findViewById(R.id.profile).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cam = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cam,0);
+            }
+        });
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==-1) {
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            ((ImageView)header.findViewById(R.id.profile)).setImageBitmap(bitmap);
+
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+
+            String encodedImage;
+            try{
+                encodedImage = Base64.getEncoder().encodeToString(byteArray);
+                SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE ).edit();
+                editor.putString("image_data",encodedImage);
+                editor.apply();
+            }
+            catch (Exception ignored){}
+        }
+    }
+
 
 }
