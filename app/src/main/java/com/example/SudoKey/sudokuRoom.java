@@ -29,6 +29,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Base64;
@@ -288,10 +289,19 @@ public class sudokuRoom extends AppCompatActivity{
         if(resultCode==-1) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             ((ImageView)header.findViewById(R.id.profile)).setImageBitmap(bitmap);
-
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            ByteArrayOutputStream stream;
+            byte[] byteArray;
+            try {
+                stream= new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byteArray = stream.toByteArray();
+                FirebaseStorage.getInstance().getReference(username).putBytes(byteArray);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            stream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
+            byteArray = stream.toByteArray();
 
             String encodedImage;
             try{

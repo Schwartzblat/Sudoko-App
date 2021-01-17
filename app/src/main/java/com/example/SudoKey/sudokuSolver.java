@@ -30,6 +30,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Arrays;
@@ -396,10 +397,19 @@ public class sudokuSolver extends AppCompatActivity {
         if(resultCode==-1) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             ((ImageView)header.findViewById(R.id.profile)).setImageBitmap(bitmap);
-
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            ByteArrayOutputStream stream;
+            byte[] byteArray;
+            try {
+                 stream= new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byteArray = stream.toByteArray();
+                FirebaseStorage.getInstance().getReference(username).putBytes(byteArray);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            stream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
+            byteArray = stream.toByteArray();
 
             String encodedImage;
             try{
