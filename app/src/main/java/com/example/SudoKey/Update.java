@@ -67,6 +67,7 @@ public class Update extends AppCompatActivity {
                     image = bytes.clone();
                     imageView.setImageBitmap(BitmapFactory.decodeByteArray(bytes , 0, bytes.length));
                     imageView.setVisibility(View.VISIBLE);
+                    ((ImageView)((NavigationView)findViewById(R.id.navi)).getHeaderView(0).findViewById(R.id.profile)).setImageBitmap(BitmapFactory.decodeByteArray(bytes , 0, bytes.length));
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -94,6 +95,7 @@ public class Update extends AppCompatActivity {
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] byteArray = stream.toByteArray();
+                ((ImageView)((NavigationView)findViewById(R.id.navi)).getHeaderView(0).findViewById(R.id.profile)).setImageBitmap(BitmapFactory.decodeByteArray(byteArray , 0, byteArray.length));
                 FirebaseStorage.getInstance().getReference(oldUsername).putBytes(byteArray);
             } catch (Exception e) {
                 e.printStackTrace();
