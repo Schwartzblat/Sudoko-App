@@ -46,6 +46,7 @@ public class logIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        findViewById(R.id.progressBar).setVisibility(View.GONE);
         //int [][]x = {{5},{2,2,3,2},{4,1,2,2},{2,1,2,1,2},{4,1,2,2,3},{1,2,1,3},{2,3,1,4},{5,2,4},{5,1,3},{1,4,2,3},{2,4,1,4},{2,6,5},{3,11},{4,3,7},{2,2,2,3},{1,1,2,2},{5,3,1},{2,2,2,1},{5,3,2},{3,1}};
         //int [][]y = {{2,4},{3,2,3},{1,1,3,1,1},{2,1,2,4,4},{3,8,3},{1,1,2,2},{2,4,1},{1,9,2,1,1},{2,3,7,1,2},{5,4},{4,3,2},{3,3,3},{2,10},{1,4,2},{2,2,3},{1,5,3},{3,4,4},{2,9},{1,7},{5}};
         mAuth = FirebaseAuth.getInstance();
@@ -80,6 +81,7 @@ public class logIn extends AppCompatActivity {
     }
 
     public void log(View v){
+        findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
         //get values
         username = ((TextView)findViewById(R.id.username)).getText().toString();
         password = ((TextView)findViewById(R.id.password)).getText().toString();
@@ -119,6 +121,7 @@ public class logIn extends AppCompatActivity {
                                             }
                                         } else {
                                             // If sign in fails, display a message to the user.
+                                            findViewById(R.id.progressBar).setVisibility(View.GONE);
                                             Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
                                             // ...
                                         }
@@ -130,6 +133,7 @@ public class logIn extends AppCompatActivity {
                 }
             }
             if (status == 0) {
+                findViewById(R.id.progressBar).setVisibility(View.GONE);
                 Toast.makeText(getApplicationContext(), "invalid name or password", Toast.LENGTH_LONG).show();
                 ((TextView) findViewById(R.id.password)).setText("");
             }
@@ -179,6 +183,7 @@ public class logIn extends AppCompatActivity {
         editor.putInt("onlineWins", onlineWins);
         editor.putString("image_data",encodedImage);
         editor.apply();
+        findViewById(R.id.progressBar).setVisibility(View.GONE);
         startActivity(i);
         finish();
 
