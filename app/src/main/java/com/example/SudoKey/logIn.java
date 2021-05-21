@@ -114,10 +114,12 @@ public class logIn extends AppCompatActivity {
                                                 }).addOnFailureListener(new OnFailureListener() {
                                                     @Override
                                                     public void onFailure(@NonNull Exception exception) {
+                                                        StatusIsOk();
                                                     }
                                                 });
                                             }
                                             catch (Exception ignored){
+                                                StatusIsOk();
                                             }
                                         } else {
                                             // If sign in fails, display a message to the user.
